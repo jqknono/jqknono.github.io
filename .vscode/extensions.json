@@ -1,0 +1,20 @@
+{
+    "recommendations": [
+        "alefragnani.bookmarks",
+        "ms-vscode.cpptools",
+        "ms-dotnettools.csharp",
+        "foam.foam-vscode",
+        "eamodio.gitlens",
+        "golang.go",
+        "xabikos.javascriptsnippets",
+        "ms-vscode.vscode-typescript-next",
+        "zainchen.json",
+        "quicktype.quicktype",
+        "esbenp.prettier-vscode",
+        "ryu1kn.text-marker",
+        "visualstudioexptteam.vscodeintellicode",
+        "dotjoshjohnson.xml",
+        "streetsidesoftware.code-spell-checker",
+        "slevesque.vscode-autohotkey"
+    ]
+}

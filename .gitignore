@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+# foam daily
+20[0-9][0-9]-[01][1-9]-[0-3][0-9].md
+
+# ignore binary
+*.exe
+
+# ignore test file
+test.*
