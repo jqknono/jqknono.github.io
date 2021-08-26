@@ -38,6 +38,8 @@
 [hello-world]: hello-world "hello-world"
 [basic]: basic "基础"
 [keyword]: keyword "keyword"
+[operator]: operator "operator"
+[variable]: variable "variable"
 [function]: function "function"
 [string]: string/string "string"
 [file]: file "file"
