@@ -30,17 +30,17 @@ Console.WriteLine(str);
 ## 格式化参数(formatString)
 
 - 整型和浮点型
-  - 标准: https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings
-  - 自定义: https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-numeric-format-strings
+  - 标准: <https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings>
+  - 自定义: <https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-numeric-format-strings>
 - 日期和日期偏移
-  - 标准: https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings
-  - 自定义: https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
+  - 标准: <https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings>
+  - 自定义: <https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings>
 - 枚举
-  - https://docs.microsoft.com/en-us/dotnet/standard/base-types/enumeration-format-strings
+  - <https://docs.microsoft.com/en-us/dotnet/standard/base-types/enumeration-format-strings>
 - TimeSpan
-  - 标准: https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings
-  - 自定义: https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-timespan-format-strings
+  - 标准: <https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings>
+  - 自定义: <https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-timespan-format-strings>
 
 ### 自己实现格式化
 
-https://docs.microsoft.com/en-us/dotnet/api/system.iformattable?view=net-5.0
+<https://docs.microsoft.com/en-us/dotnet/api/system.iformattable?view=net-5.0>

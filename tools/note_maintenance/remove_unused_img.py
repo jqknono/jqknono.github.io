@@ -9,18 +9,17 @@ import os
 from pathlib import Path
 import re
 from shutil import move
-import chardet
 
 rootPATH = os.getcwd()
 
 # 获取所有图片
-pngs = {}
+pngDict = {}
 for dp, dn, filenames in os.walk(rootPATH):
     for f in filenames:
         ext = os.path.splitext(f)[1].lower()
         if ext == '.png' or ext == '.jpg':
             relpath = os.path.join(dp, f)
-            pngs[f] = [relpath, 0]
+            pngDict[f] = [relpath, 0]
 
 # 遍历所有markdown文件
 mds = [os.path.join(dp, f) for dp, dn, filenames in os.walk(rootPATH)
@@ -40,26 +39,19 @@ def get_depth(path, depth=0):
 
 rootPATHDepth = get_depth(rootPATH)
 
-pngsRemovedToImg = []
-pngsRemovedToRemoved = []
+pngRemovedToImg = []
+pngRemovedToRemoved = []
 nonUtf8Files = []
 
 # 如果文件存在引用则hash标记为1, 复杂度O(m*n), m是文件总行数, n是图片总个数
 for file in mds:
     try:
-        # 获取编码格式
-        # 很难判断, 放弃识别文本编码, 默认使用utf-8
-        # with open(file, 'rb') as f:
-        #     s = f.read()
-        #     chatest = chardet.detect(s)
-        #     print(chatest)
-
         with open(file, mode='r+', encoding='utf-8') as textfile:
             filetext = textfile.read()
             matches = re.findall(pattern, filetext)
             for match in matches:
-                if match in pngs:
-                    pngs[match][1] += 1
+                if match in pngDict:
+                    pngDict[match][1] += 1
             path = os.path.dirname(file)
             relDepth = get_depth(path) - rootPATHDepth
             relDepthStr = '../' * relDepth
@@ -74,26 +66,26 @@ for file in mds:
         nonUtf8Files.append(file)
         continue
 
-for key, value in pngs.items():
+for key, value in pngDict.items():
     if value[1] == 0:
-        move(value[0], os.path.join('./removed_imgs', key))
-        pngsRemovedToRemoved.append(key)
+        move(value[0], os.path.join('./removed_img', key))
+        pngRemovedToRemoved.append(key)
     else:
         # 所有图片移动到img目录
         move(value[0], os.path.join('./img', key))
-        pngsRemovedToImg.append(key)
+        pngRemovedToImg.append(key)
 
 
 print('\n不是utf8编码:')
 for item in nonUtf8Files:
     print(item)
 
-print("\nRemove to removed_imgs:")
-for item in pngsRemovedToRemoved:
+print("\nRemove to removed_img:")
+for item in pngRemovedToRemoved:
     print(item)
 
 print("\nRemove to img:")
-for item in pngsRemovedToImg:
+for item in pngRemovedToImg:
     print(item)
 
 print('\n已完成')
