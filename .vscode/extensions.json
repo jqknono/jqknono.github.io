@@ -15,6 +15,11 @@
         "visualstudioexptteam.vscodeintellicode",
         "dotjoshjohnson.xml",
         "streetsidesoftware.code-spell-checker",
-        "slevesque.vscode-autohotkey"
+        "slevesque.vscode-autohotkey",
+        "rangav.vscode-thunder-client",
+        "csholmq.excel-to-markdown-table",
+        "christian-kohler.path-intellisense",
+        "ms-python.vscode-pylance",
+        "tabnine.tabnine-vscode"
     ]
 }
