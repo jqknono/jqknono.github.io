@@ -1,4 +1,4 @@
-# ide-book
+# ide-cheatsheet
 
 - [[visual-studio]]
 - [[vscode]]
