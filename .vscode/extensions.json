@@ -1,5 +1,6 @@
 {
     "recommendations": [
+        "foam.foam-vscode",
         "alefragnani.bookmarks",
         "ms-vscode.cpptools",
         "ms-dotnettools.csharp",
@@ -20,6 +21,8 @@
         "csholmq.excel-to-markdown-table",
         "christian-kohler.path-intellisense",
         "ms-python.vscode-pylance",
+        "yzhang.markdown-all-in-one",
+        "mushan.vscode-paste-image",
         "tabnine.tabnine-vscode"
     ]
 }
