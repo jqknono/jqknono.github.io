@@ -49,6 +49,7 @@
 [file]: file.md "file"
 [class]: class.md "class"
 [advance]: advance.md "advance"
+[algorithm]: algorithm.md "algorithm"
 [syntax-sugar]: syntax-sugar.md "syntax-sugar"
 [symbol]: symbol.md "symbol"
 [memory]: memory/memory.md "Memory"
