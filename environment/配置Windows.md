@@ -1,15 +1,39 @@
-# 建议的工具
+# Windows
 
-入选标准是性价比高, 无广告, 信息窃取等劣迹.
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
-- PDF 阅读工具: https://www.sumatrapdfreader.org/free-pdf-reader
-- 对比工具 Beyond Compare: https://www.scootersoftware.com/
-- 分区助手: https://www.disktool.cn/
-- 备份工具: https://www.disktool.cn/backup/download.html
-- 磁盘管理工具 Diskgenius: https://www.diskgenius.cn/
-- 系统优化工具 Dism++: https://www.chuyu.me/zh-Hans/
+<!-- code_chunk_output -->
 
-## 安装命令
+- [Windows](#windows)
+  - [系统配置](#系统配置)
+  - [建议的应用](#建议的应用)
+  - [可选应用](#可选应用)
+
+<!-- /code_chunk_output -->
+
+## 系统配置
+
+```batch
+rem 关掉 Windows Search
+sc stop "wsearch" && sc config "wsearch" start=disabled
+```
+
+```ps1
+# 使能 ps 脚本运行
+Set-ExecutionPolicy RemoteSigned
+
+# 关闭Real-time protection
+Set-MpPreference -DisableRealtimeMonitoring $true
+# 关闭smart Screen
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v SmartScreenEnabled /t REG_SZ /d Off
+
+# 映射Capslock为Ctrl, 重启生效
+$hexified = "00,00,00,00,00,00,00,00,02,00,00,00,1d,00,3a,00,00,00,00,00".Split(',') | % { "0x$_"};
+$kbLayout = 'HKLM:\System\CurrentControlSet\Control\Keyboard Layout';
+New-ItemProperty -Path $kbLayout -Name "Scancode Map" -PropertyType Binary -Value ([byte[]]$hexified);
+```
+
+## 建议的应用
 
 ```ps1
 # ide
@@ -34,7 +58,7 @@ winget install --id OpenJS.NodeJS.LTS
 winget install --id GoLang.Go
 ```
 
-可选
+## 可选应用
 
 ```ps1
 # dev

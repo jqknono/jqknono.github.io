@@ -111,3 +111,7 @@ dist
 
 # ignore test file
 test.*
+
+# C# proj
+obj
+bin

@@ -32,4 +32,5 @@
   "cSpell.ignoreWords": [
     "DominikReichl",
   ],
+  "foam.dateSnippets.afterCompletion": "noop",
 }

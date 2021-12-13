@@ -3,12 +3,8 @@
 debug=true
 
 if [ -z $debug ]; then
-
 #fsdgsadf
-
-
 fi
-
 
 if [ -z $debug ]
 then
