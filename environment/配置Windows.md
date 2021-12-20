@@ -84,3 +84,17 @@ winget install --id Microsoft.PowerShell
 winget install --id Microsoft.OneDrive
 winget install --id JGraph.Draw
 ```
+
+## 循环任务
+
+```ps1
+$action = New-ScheduledTaskAction -Execute "C:\Python39\python.exe D:\private-code\ddns-client.py"
+$trigger1 = New-ScheduledTaskTrigger -RepetitionInterval (New-TimeSpan -Minutes 10) -Once -At 12am
+$trigger2 = New-ScheduledTaskTrigger -AtStartup
+$principal = New-ScheduledTaskPrincipal -UserId "system"
+$settings = New-ScheduledTaskSettingsSet
+$task = New-ScheduledTask -Action $action -Principal $principal -Trigger $trigger1 $trigger2 -Settings $settings
+Register-ScheduledTask T1 -InputObject $task -TaskPath "jqknono"
+
+Unregister-ScheduledTask -TaskName "T1" -Confirm:$false
+```
