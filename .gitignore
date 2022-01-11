@@ -115,3 +115,6 @@ test.*
 # C# proj
 obj
 bin
+.vscode/JQKNONO.GITHUB.IO.DB
+.vscode/JQKNONO.GITHUB.IO.DB-shm
+.vscode/JQKNONO.GITHUB.IO.DB-wal
