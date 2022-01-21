@@ -55,6 +55,7 @@ winget install --id DominikReichl.KeePass
 winget install --id XMind.XMind
 winget install --id 7zip.7zip
 winget install --id Notepad++.Notepad++
+winget install everythingtoolbar
 # lang
 winget install --id Python.Python.3
 winget install --id OpenJS.NodeJS.LTS
