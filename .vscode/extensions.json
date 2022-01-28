@@ -15,14 +15,13 @@
         "visualstudioexptteam.vscodeintellicode",
         "dotjoshjohnson.xml",
         "streetsidesoftware.code-spell-checker",
-        "slevesque.vscode-autohotkey",
         "rangav.vscode-thunder-client",
         "csholmq.excel-to-markdown-table",
         "christian-kohler.path-intellisense",
         "ms-python.vscode-pylance",
-        "yzhang.markdown-all-in-one",
         "mushan.vscode-paste-image",
-        "tabnine.tabnine-vscode",
-        "formulahendry.code-runner"
+        "formulahendry.code-runner",
+        "github.copilot",
+        "sumneko.lua"
     ]
 }

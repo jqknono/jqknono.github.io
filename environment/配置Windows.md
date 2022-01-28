@@ -8,6 +8,7 @@
   - [系统配置](#系统配置)
   - [建议的应用](#建议的应用)
   - [可选应用](#可选应用)
+  - [循环任务](#循环任务)
 
 <!-- /code_chunk_output -->
 
@@ -42,20 +43,22 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 # ide
 winget install --id Git.Git
 winget install --id Microsoft.VisualStudioCode
-winget install --id Microsoft.VisualStudio.2019.Community
+winget install --id Microsoft.VisualStudio.2022.Community
+winget install --id Microsoft.VisualStudio.2019.BuildTools
 # tool
 winget install --id Microsoft.WindowsTerminal
 winget install "Sysinternals Suite"
-winget install --id  7zip.7zip
+winget install --id 7zip.7zip
 winget install --id ShareX.ShareX
 winget install --id WinSCP.WinSCP
 winget install --id ScooterSoftware.BeyondCompare4
 winget install --id voidtools.Everything
-winget install --id DominikReichl.KeePass
 winget install --id XMind.XMind
 winget install --id 7zip.7zip
 winget install --id Notepad++.Notepad++
-winget install everythingtoolbar
+winget install --id Docker.DockerDesktop
+winget install --id WiresharkFoundation.Wireshark
+winget install --id Kitware.CMake
 # lang
 winget install --id Python.Python.3
 winget install --id OpenJS.NodeJS.LTS
@@ -69,20 +72,22 @@ winget install --id GoLang.Go
 winget install --id Oracle.MySQL
 winget install --id Microsoft.SQLServer.2019.Express
 winget install --id Tencent.wechat-devtool
-winget install --id Docker.DockerDesktop
 winget install --id Google.AndroidStudio
 # tool
+winget install --id Cppcheck.Cppcheck
 winget install --id Hiresolution.X-MouseButtonControl
+winget install --id Tencent.WeChat
+winget install --id Adobe.Acrobat.Reader.32-bit
+winget install --id DominikReichl.KeePass
 winget install --id Google.Drive
 winget install --id Google.Chrome
 winget install --id SoftDeluxe.FreeDownloadManager
-winget install --id Nutstore.Nutstore
-winget install --id Tencent.WeChat
 winget install --id Lexikos.AutoHotkey
-winget install --id WiresharkFoundation.Wireshark
 winget install --id DeepL.DeepL
-winget install --id Microsoft.VC++2015-2019Redist-x64
-winget install --id Microsoft.VC++2015-2019Redist-x86
+winget install --id Microsoft.VC++2015-2022Redist-x64
+winget install --id Microsoft.VC++2013Redist-x64
+winget install --id Microsoft.VC++2015-2022Redist-x86
+winget install --id Microsoft.VC++2013Redist-x86
 winget install "OneNote for Windows 10"
 winget install --id Microsoft.PowerShell
 winget install --id Microsoft.OneDrive

@@ -6,25 +6,48 @@
 		"dockerfile": "Dockerfile",
 		// Update 'VARIANT' to pick an Debian / Ubuntu OS version: debian-11, debian-10, debian-9, ubuntu-21.04, ubuntu-20.04, ubuntu-18.04
 		// Use Debian 11, Debian 9, Ubuntu 18.04 or Ubuntu 21.04 on local arm64/Apple Silicon
-		"args": { "VARIANT": "ubuntu-20.04" }
+		"args": {
+			"VARIANT": "ubuntu-20.04"
+		}
 	},
-	"runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
-
+	"runArgs": [
+		"--cap-add=SYS_PTRACE",
+		"--security-opt",
+		"seccomp=unconfined"
+	],
 	// Set *default* container specific settings.json values on container create.
 	"settings": {},
-
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
+		"foam.foam-vscode",
+		"alefragnani.bookmarks",
 		"ms-vscode.cpptools",
-		"foam.foam-vscode"
+		"ms-dotnettools.csharp",
+		"eamodio.gitlens",
+		"golang.go",
+		"xabikos.javascriptsnippets",
+		"ms-vscode.vscode-typescript-next",
+		"zainchen.json",
+		"quicktype.quicktype",
+		"esbenp.prettier-vscode",
+		"ryu1kn.text-marker",
+		"visualstudioexptteam.vscodeintellicode",
+		"dotjoshjohnson.xml",
+		"streetsidesoftware.code-spell-checker",
+		"rangav.vscode-thunder-client",
+		"csholmq.excel-to-markdown-table",
+		"christian-kohler.path-intellisense",
+		"ms-python.vscode-pylance",
+		"mushan.vscode-paste-image",
+		"tabnine.tabnine-vscode",
+		"formulahendry.code-runner",
+		"github.copilot",
+		"sumneko.lua"
 	],
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "gcc -v",
-
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
 	"features": {
@@ -33,5 +56,7 @@
 		"python": "latest",
 		"golang": "latest",
 		"dotnet": "latest",
+		"java": "latest",
+		"powershell": "latest"
 	}
 }
