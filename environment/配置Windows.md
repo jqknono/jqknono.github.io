@@ -48,6 +48,7 @@ winget install --id Microsoft.VisualStudio.2019.BuildTools
 # tool
 winget install --id Microsoft.WindowsTerminal
 winget install "Sysinternals Suite"
+winget install DevToys
 winget install --id 7zip.7zip
 winget install --id ShareX.ShareX
 winget install --id WinSCP.WinSCP
@@ -59,10 +60,14 @@ winget install --id Notepad++.Notepad++
 winget install --id Docker.DockerDesktop
 winget install --id WiresharkFoundation.Wireshark
 winget install --id Kitware.CMake
+winget install --id Postman.Postman
+winget install --id AOMEI.PartitionAssistant
 # lang
 winget install --id Python.Python.3
 winget install --id OpenJS.NodeJS.LTS
 winget install --id GoLang.Go
+winget install --id Microsoft.ASPNetCore.6-x64
+winget install --id Microsoft.dotnet
 ```
 
 ## 可选应用

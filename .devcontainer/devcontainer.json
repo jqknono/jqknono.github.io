@@ -33,22 +33,22 @@
 		"ryu1kn.text-marker",
 		"visualstudioexptteam.vscodeintellicode",
 		"dotjoshjohnson.xml",
-		"streetsidesoftware.code-spell-checker",
 		"rangav.vscode-thunder-client",
 		"csholmq.excel-to-markdown-table",
 		"christian-kohler.path-intellisense",
 		"ms-python.vscode-pylance",
 		"mushan.vscode-paste-image",
-		"tabnine.tabnine-vscode",
 		"formulahendry.code-runner",
 		"github.copilot",
-		"sumneko.lua"
+		"sumneko.lua",
+		"ms-azuretools.vscode-docker"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "gcc -v",
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	// https://github.com/microsoft/vscode-dev-containers/tree/main/script-library/docs
 	"remoteUser": "vscode",
 	"features": {
 		"git": "latest",
@@ -57,6 +57,7 @@
 		"golang": "latest",
 		"dotnet": "latest",
 		"java": "latest",
-		"powershell": "latest"
+		"powershell": "latest",
+		"docker": "latest",
 	}
 }

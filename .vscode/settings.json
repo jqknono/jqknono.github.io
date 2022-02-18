@@ -14,7 +14,7 @@
   },
   "files.defaultLanguage": "markdown",
   "files.exclude": {
-    "**/*.exe": true,
+    // "**/*.exe": true,
     "**/node_modules": true
   },
   "files.watcherExclude": {

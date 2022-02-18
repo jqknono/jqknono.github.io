@@ -14,7 +14,6 @@
         "ryu1kn.text-marker",
         "visualstudioexptteam.vscodeintellicode",
         "dotjoshjohnson.xml",
-        "streetsidesoftware.code-spell-checker",
         "rangav.vscode-thunder-client",
         "csholmq.excel-to-markdown-table",
         "christian-kohler.path-intellisense",
@@ -22,6 +21,7 @@
         "mushan.vscode-paste-image",
         "formulahendry.code-runner",
         "github.copilot",
-        "sumneko.lua"
+        "yinfei.luahelper",
+        "rogalmic.bash-debug"
     ]
 }
