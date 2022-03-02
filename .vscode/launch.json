@@ -5,19 +5,39 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "gcc.exe - Build and debug active file",
+            "type": "LuaHelper-Debug",
+            "request": "launch",
+            "name": "LuaHelper-DebugFile",
+            "description": "独立文件调试模式",
+            "luaPath": "",
+            "packagePath": [],
+            "luaFileExtension": "",
+            "connectionPort": 8818,
+            "stopOnEntry": true,
+            "useCHook": true
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "/workspaces/jqknono.github.io/lang/test/python/test.json",
+                "cai.li"
+            ]
+        },
+        {
+            "name": "g++ - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-            "args": [
-                "12"
-            ],
-            "stopAtEntry": false,
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": true,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\Users\\jqknono\\Documents\\tools\\mingw64\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -25,7 +45,8 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: gcc.exe build active file"
+            "preLaunchTask": "C/C++: g++ build active file",
+            "miDebuggerPath": "/usr/bin/gdb"
         }
     ]
 }

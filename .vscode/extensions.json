@@ -4,7 +4,6 @@
         "alefragnani.bookmarks",
         "ms-vscode.cpptools",
         "ms-dotnettools.csharp",
-        "foam.foam-vscode",
         "eamodio.gitlens",
         "golang.go",
         "xabikos.javascriptsnippets",
@@ -15,14 +14,14 @@
         "ryu1kn.text-marker",
         "visualstudioexptteam.vscodeintellicode",
         "dotjoshjohnson.xml",
-        "streetsidesoftware.code-spell-checker",
-        "slevesque.vscode-autohotkey",
         "rangav.vscode-thunder-client",
         "csholmq.excel-to-markdown-table",
         "christian-kohler.path-intellisense",
         "ms-python.vscode-pylance",
-        "yzhang.markdown-all-in-one",
         "mushan.vscode-paste-image",
-        "tabnine.tabnine-vscode"
+        "formulahendry.code-runner",
+        "github.copilot",
+        "yinfei.luahelper",
+        "rogalmic.bash-debug"
     ]
 }
