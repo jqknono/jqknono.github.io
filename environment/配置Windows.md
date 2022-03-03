@@ -103,6 +103,7 @@ winget install "OneNote for Windows 10"
 winget install --id Microsoft.PowerShell
 winget install --id Microsoft.OneDrive
 winget install --id JGraph.Draw
+winget install --id VMware.WorkstationPlayer
 ```
 
 ## 循环任务

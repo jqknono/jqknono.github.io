@@ -49,13 +49,14 @@
 	// https://github.com/microsoft/vscode-dev-containers/tree/main/script-library/docs
 	"remoteUser": "vscode",
 	"features": {
-		"git": "latest",
-		"node": "latest",
-		"python": "latest",
+		"git": "os-provided",
+		"node": "lts",
+		"python": "os-provided",
 		"golang": "latest",
 		"dotnet": "latest",
-		"java": "latest",
+		"java": "lts",
 		"powershell": "latest",
-		"docker": "latest",
+		"docker-from-docker": "latest",
+		"rust": "latest"
 	}
 }

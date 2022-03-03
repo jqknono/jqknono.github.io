@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace BlueSEyesProblem
+﻿namespace BlueSEyesProblem
 {
     public enum EyeColorEnum { Blue, Brown, Undefined }
 
@@ -273,7 +269,7 @@ namespace BlueSEyesProblem
             if (!TotalPeoples.Any(x => x.Dead))
             {
                 commonKnowledge.BlueEyeNum++;
-                
+
                 // New common knowledge generated
                 InputCommonKnowledge(commonKnowledge);
             }
