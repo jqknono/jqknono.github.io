@@ -12,10 +12,18 @@
 
         public int? BrownEyeNum;
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
+            if (obj == null)
+            {
+                return false;
+            }
             bool equals = false;
-            Knowledge knowledge = obj as Knowledge;
+            Knowledge? knowledge = obj as Knowledge;
+            if (knowledge == null)
+            {
+                return false;
+            }
             equals = KnownPeoples.SequenceEqual(knowledge.KnownPeoples)
                      && BlueEyeNum == knowledge.BlueEyeNum
                      && BrownEyeNum == knowledge.BrownEyeNum;
@@ -77,7 +85,7 @@
             mutualKnowledge = knowledge;
         }
 
-        public void InputNewCommonKnowledge(Knowledge commonKnowledge, bool showMind = false)
+        public void InputNewCommonKnowledge(Knowledge? commonKnowledge, bool showMind = false)
         {
             if (commonKnowledge == null)
                 return;
@@ -146,7 +154,7 @@
             Console.WriteLine();
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             bool equal = true;
 
@@ -176,13 +184,13 @@
         /// that means, there is no common knowledge from the beginning.
         /// It is always true.
         /// </summary>
-        public static Knowledge CommonKnowledge;
+        public static Knowledge? CommonKnowledge;
 
 
         /// <summary>
         /// Reality.
         /// </summary>
-        public static List<People> TotalPeoples;
+        public static List<People> TotalPeoples = new List<People>();
 
         static void Main(string[] args)
         {
@@ -195,10 +203,10 @@
 
             Console.WriteLine();
             Console.WriteLine("Total population:");
-            int totalNum = int.Parse(Console.ReadLine());
+            int totalNum = int.Parse(Console.ReadLine() ?? "10");
 
             Console.WriteLine("Total blue  population:");
-            int blueEyeNum = int.Parse(Console.ReadLine());
+            int blueEyeNum = int.Parse(Console.ReadLine() ?? "1");
 
             Random random = new Random();
             TotalPeoples = new List<People>();
