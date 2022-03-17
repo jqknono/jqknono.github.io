@@ -1,4 +1,4 @@
-# debug-cheatsheet-定位问题的方法
+# 调试工具
 
 - [[visual-studio]]
 - [[vscode]]

@@ -1,4 +1,4 @@
-# syntax-cheatsheet
+# 语法速查
 
 ## 用途
 

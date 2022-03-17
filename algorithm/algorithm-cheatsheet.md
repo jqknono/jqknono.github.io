@@ -1,2 +1,2 @@
-# algorithm-cheatsheet-解决问题的方法
+# 算法速查
 

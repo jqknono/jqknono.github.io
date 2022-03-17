@@ -22,6 +22,7 @@ sc stop "wsearch" && sc config "wsearch" start=disabled
 ```ps1
 # 使能 ps 脚本运行
 Set-ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy Bypass -Scope Process
 
 # 关闭Real-time protection
 Set-MpPreference -DisableRealtimeMonitoring $true
@@ -41,6 +42,19 @@ reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\Inpr
 
 # 恢复到新版右键菜单
 reg delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}" /f
+
+# IPv4 ping echo
+netsh advfirewall firewall add rule name="ICMP Allow incoming V4 echo request" protocol="icmpv4:8,any" dir=in action=allow
+
+# IPv6 ping echo
+netsh advfirewall firewall add rule name="ICMP Allow incoming V6 echo request" protocol="icmpv6:8,any" dir=in action=allow
+
+# 使能Container
+Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V", "Containers") -All
+
+# 使能 IIS
+Enable-WindowsOptionalFeature -Online -FeatureName IIS-WebServerRole, IIS-WebServer, IIS-CommonHttpFeatures, IIS-ManagementConsole, IIS-HttpErrors, IIS-HttpRedirect, IIS-WindowsAuthentication, IIS-StaticContent, IIS-DefaultDocument, IIS-HttpCompressionStatic, IIS-DirectoryBrowsing
+
 ```
 
 ## 建议的应用
@@ -61,12 +75,12 @@ winget install --id WinSCP.WinSCP
 winget install --id ScooterSoftware.BeyondCompare4
 winget install --id voidtools.Everything
 winget install --id XMind.XMind
-winget install --id 7zip.7zip
 winget install --id Notepad++.Notepad++
 winget install --id Docker.DockerDesktop
 winget install --id WiresharkFoundation.Wireshark
 winget install --id Kitware.CMake
 winget install --id Postman.Postman
+winget install --id Google.Chrome
 winget install --id AOMEI.PartitionAssistant
 # lang
 winget install --id Python.Python.3
@@ -104,18 +118,22 @@ winget install --id Microsoft.PowerShell
 winget install --id Microsoft.OneDrive
 winget install --id JGraph.Draw
 winget install --id VMware.WorkstationPlayer
+winget install --id VMware.WorkstationPro
+winget install --id Figma.Figma
 ```
 
-## 循环任务
+## 配置计划任务
 
 ```ps1
-$action = New-ScheduledTaskAction -Execute "C:\Python39\python.exe D:\private-code\ddns-client.py"
-$trigger1 = New-ScheduledTaskTrigger -RepetitionInterval (New-TimeSpan -Minutes 10) -Once -At 12am
+Unregister-ScheduledTask -TaskName "T1" -Confirm:$false
+
+$action = New-ScheduledTaskAction -Execute "D:\code_private\jqknono.github.io\test.exe"
+$trigger1 = New-ScheduledTaskTrigger -RepetitionInterval (New-TimeSpan -Minutes 1) -Once -At 12am
 $trigger2 = New-ScheduledTaskTrigger -AtStartup
 $principal = New-ScheduledTaskPrincipal -UserId "system"
 $settings = New-ScheduledTaskSettingsSet
 $task = New-ScheduledTask -Action $action -Principal $principal -Trigger $trigger1 $trigger2 -Settings $settings
-Register-ScheduledTask T1 -InputObject $task -TaskPath "jqknono"
+Register-ScheduledTask -TaskName "T1" -TaskPath "jqknono" -InputObject $task 
 
-Unregister-ScheduledTask -TaskName "T1" -Confirm:$false
+Set-ScheduledTask -TaskName "T1" -TaskPath "jqknono" -Trigger $trigger1
 ```

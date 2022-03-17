@@ -39,7 +39,8 @@
 		"github.copilot",
 		"sumneko.lua",
 		"ms-azuretools.vscode-docker",
-		"shd101wyy.markdown-preview-enhanced"
+		"shd101wyy.markdown-preview-enhanced",
+        "nemesv.copy-file-name"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
