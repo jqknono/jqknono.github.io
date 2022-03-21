@@ -77,6 +77,10 @@ reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVer
 # Documents
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{d3162b92-9365-467a-956b-92703aca08af}" /f
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{d3162b92-9365-467a-956b-92703aca08af}" /f
+
+# 禁用windows service
+sc stop "wsearch" && sc config "wsearch" start=disabled
+set-service -name "wsearch" -status Stopped -StartupType Disabled
 ```
 
 ## 建议的应用
@@ -125,8 +129,6 @@ winget install --id Google.AndroidStudio
 winget install --id Cppcheck.Cppcheck
 winget install --id Hiresolution.X-MouseButtonControl
 winget install --id Tencent.WeChat
-winget install --id Adobe.Acrobat.Reader.32-bit
-winget install --id DominikReichl.KeePass
 winget install --id Google.Drive
 winget install --id Google.Chrome
 winget install --id SoftDeluxe.FreeDownloadManager
