@@ -1,5 +1,6 @@
-# Chrome 插件: 自动切换文档到中文
+# README_tozh
 
+Chrome 插件: 自动切换文档到中文
 Edge 也可以使用.
 
 ## 如何使用

@@ -1,12 +1,8 @@
 # 效率工具
 
-入选标准是性价比高, 无广告, 无信息窃取等劣迹.
+主要是自己做的一些效率工具.
 
 - [[ahk]]: AutoHotKey(AHK) 是一个自动映射快捷键到功能的工具, 其编写有自己的语法.
-- PDF 阅读工具: https://www.sumatrapdfreader.org/free-pdf-reader
-- 对比工具 Beyond Compare: https://www.scootersoftware.com/
-- 分区助手: https://www.disktool.cn/
-- 磁盘管理工具 Diskgenius: https://www.diskgenius.cn/
 - 系统优化工具 Dism++: https://www.chuyu.me/zh-Hans/
 - [[README_change-to-zh]]: 自动切换文档到中文
 

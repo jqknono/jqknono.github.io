@@ -23,6 +23,7 @@
 		"ms-vscode.cpptools",
 		"ms-dotnettools.csharp",
 		"golang.go",
+        "Gruntfuggly.todo-tree",
 		"xabikos.javascriptsnippets",
 		"ms-vscode.vscode-typescript-next",
 		"zainchen.json",
