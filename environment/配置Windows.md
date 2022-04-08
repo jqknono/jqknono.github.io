@@ -104,6 +104,7 @@ winget install --id Kitware.CMake
 winget install --id Postman.Postman
 winget install --id Google.Chrome
 winget install --id AOMEI.PartitionAssistant
+winget install --id DBBrowserForSQLite.DBBrowserForSQLite
 # lang
 winget install --id Python.Python.3
 winget install --id OpenJS.NodeJS.LTS
