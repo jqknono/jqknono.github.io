@@ -107,5 +107,8 @@
     "string_view": "cpp",
     "fstream": "cpp",
     "sstream": "cpp"
-  },
+},
+"java.project.sourcePaths": [
+    "."
+],
 }

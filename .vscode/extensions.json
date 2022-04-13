@@ -21,6 +21,7 @@
         "formulahendry.code-runner",
         "github.copilot",
         "yinfei.luahelper",
-        "rogalmic.bash-debug"
+        "rogalmic.bash-debug",
+        "xabikos.JavaScriptSnippets"
     ]
 }

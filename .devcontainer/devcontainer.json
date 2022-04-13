@@ -42,7 +42,9 @@
 		"ms-azuretools.vscode-docker",
 		"shd101wyy.markdown-preview-enhanced",
         "nemesv.copy-file-name",
-        "ms-vscode.powershell"
+        "ms-vscode.powershell",
+        "yinfei.luahelper",
+        "QiuMingGe.cpp-check-lint"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
