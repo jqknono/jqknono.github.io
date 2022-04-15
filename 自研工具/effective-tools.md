@@ -4,8 +4,8 @@
 
 - [[ahk]]: AutoHotKey(AHK) 是一个自动映射快捷键到功能的工具, 其编写有自己的语法.
 - 系统优化工具 Dism++: https://www.chuyu.me/zh-Hans/
-- [[README_change-to-zh]]: 自动切换文档到中文
-- [[nirsoft]]http://www.nirsoft.net/
+- [[README_tozh]]: 自动切换文档到中文
+- [nirsoft](http://www.nirsoft.net/)
 
 ## Beyond Compare 文件对比
 

@@ -3,6 +3,7 @@
 - [[gcc-cheetsheet]]
 - [[bash-cheetsheet]]
 - [[algorithm-cheatsheet]]
+- [[c-cheetsheet]]
 
 - [[lua]]
 - [[sql]]
