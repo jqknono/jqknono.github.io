@@ -1,6 +1,4 @@
----
-https://github.com/funnydman/nasm-assembly-examples/blob/master/gcc-cheat-sheet.md
----
+# gcc 速查
 
 ## Most useful commands (especially for me:)
 
@@ -192,3 +190,5 @@ https://gcc.gnu.org/onlinedocs/gcc/Developer-Options.html
 ```bash
 gcc -fdump-tree-all hello.c
 ```
+
+[ref_gcc-cheat-sheet]: https://github.com/funnydman/nasm-assembly-examples/blob/master/gcc-cheat-sheet.md
