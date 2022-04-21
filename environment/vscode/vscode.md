@@ -1,3 +1,3 @@
-# vscode
+# 配置vscode
 
-官网: <https://code.visualstudio.com/>
+https://code.visualstudio.com/docs/remote/containers
