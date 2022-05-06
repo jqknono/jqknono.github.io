@@ -120,3 +120,4 @@ bin
 .vscode/JQKNONO.GITHUB.IO.DB-wal
 *.out
 languages/hello_world/hello-rust/target/
+*.pyc

@@ -36,7 +36,7 @@ mds = []
 for dp, dn, filenames in os.walk(rootPATH):
     isExclude = False
     for folder in exclude_folders:
-        if folder in dp:
+        if folder == dp:
             isExclude = True
             break
     if isExclude:
@@ -88,11 +88,11 @@ for file in mds:
             if GitbookFolderName in file:
                 relDepthStr = '../' * (relDepth - 1)
                 replacePattern = r"![\1](" + relDepthStr + \
-                    f"{img_dirname}/\\2)"
+                    GitbookFolderName + '/' + f"{img_dirname}/\\2)"
             else:
                 relDepthStr = '../' * relDepth
                 replacePattern = r"![\1](" + relDepthStr + \
-                    GitbookFolderName + '/' + f"{img_dirname}/\\2)"
+                    f"{img_dirname}/\\2)"
 
             # 所有引用图片的位置替换为img目录下的图片位置
             filetext = re.sub(matchPatter, replacePattern,
@@ -110,7 +110,7 @@ for key, value in pngs.items():
         pngsRemovedToRemoved.append(key)
     else:
         # 所有图片移动到img目录
-        move(value[0], os.path.join(gitbook_img_dir, key))
+        move(value[0], os.path.join(img_dir, key))
         pngsRemovedToImg.append(key)
 
 

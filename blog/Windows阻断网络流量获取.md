@@ -110,9 +110,9 @@ auditpol /set /subcategory:"{0CCE9233-69AE-11D9-BED3-505054503030}" /success:ena
 auditpol /get /category:"{6997984A-797A-11D9-BED3-505054503030}"
 auditpol /set /category:"{6997984A-797A-11D9-BED3-505054503030}" /success:disable /failure:disable
 # Filtering Platform Packet Drop | {0CCE9225-69AE-11D9-BED3-505054503030}
-auditpol /set /subcategory:"{0CCE9225-69AE-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /subcategory:"{0CCE9225-69AE-11D9-BED3-505054503030}" /success:disable /failure:enable
 # Filtering Platform Connection  | {0CCE9226-69AE-11D9-BED3-505054503030}
-auditpol /set /subcategory:"{0CCE9226-69AE-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /subcategory:"{0CCE9226-69AE-11D9-BED3-505054503030}" /success:disable /failure:enable
 ```
 
 ```ps1
@@ -128,23 +128,37 @@ foreach ($event in $Events) {
 
 事件说明:
 
-| Event ID | Explanation                                                                                                                 |
-| -------- | --------------------------------------------------------------------------------------------------------------------------- |
-| 5031(F): | The Windows Firewall Service **blocked** an application from accepting incoming connections on the network.                 |
-| 5150(-): | The Windows Filtering Platform **blocked** a packet.                                                                        |
-| 5151(-): | A more restrictive Windows Filtering Platform filter has **blocked** a packet.                                              |
-| 5154(S): | The Windows Filtering Platform has permitted an application or service to listen on a port for incoming connections.        |
-| 5155(F): | The Windows Filtering Platform has **blocked** an application or service from listening on a port for incoming connections. |
-| 5156(S): | The Windows Filtering Platform has permitted a connection.                                                                  |
-| 5157(F): | The Windows Filtering Platform has **blocked** a connection.                                                                |
-| 5158(S): | The Windows Filtering Platform has permitted a bind to a local port.                                                        |
-| 5159(F): | The Windows Filtering Platform has **blocked** a bind to a local port.                                                      |
+| Event ID    | Explanation                                                                                                                 |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------- |
+| 5031(F)     | The Windows Firewall Service **blocked** an application from accepting incoming connections on the network.                 |
+| 5150(-)     | The Windows Filtering Platform **blocked** a **packet**.                                                                    |
+| 5151(-)     | A more restrictive Windows Filtering Platform filter has **blocked** a **packet**.                                          |
+| 5152(F)     | The Windows Filtering Platform **blocked** a **packet**.                                                                    |
+| 5153(S)     | A more restrictive Windows Filtering Platform filter has **blocked** a **packet**.                                          |
+| 5154(S)     | The Windows Filtering Platform has permitted an application or service to listen on a port for incoming connections.        |
+| 5155(F)     | The Windows Filtering Platform has **blocked** an application or service from listening on a port for incoming connections. |
+| 5156(S)     | The Windows Filtering Platform has permitted a connection.                                                                  |
+| **5157(F)** | The Windows Filtering Platform has **blocked** a connection.                                                                |
+| 5158(S)     | The Windows Filtering Platform has permitted a bind to a local port.                                                        |
+| 5159(F)     | The Windows Filtering Platform has **blocked** a bind to a local port.                                                      |
 
-事件详细说明:
+关注的事件详细说明:
 
-- [5155](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5155)
-- [5157](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5157)
-- [5159](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5159)
+- [Audit Filtering Platform Packet Drop](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-filtering-platform-packet-drop)
+  - 这类事件产生量非常大，建议关注**5157**事件, 它记录了几乎相同的信息, 但是 5157 基于链接记录而不是基于数据包.
+  - Failure events volume typically is very high for this subcategory and typically used for troubleshooting. If you need to monitor blocked connections, it is better to use “5157(F): The Windows Filtering Platform has blocked a connection,” because it contains almost the same information and generates per-connection, not per-packet.
+    ![建议5157](../attachments/20220506121611.png)
+  - ~[5152](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5152)~
+  - ~[5153](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5153)~
+- [Audit Filtering Platform Connection](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-filtering-platform-connection)
+  - 建议只关注失败事件, 如被阻止的连接, 按需关注允许的链接.
+  - [5031](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5031)
+    - If you don’t have any firewall rules (Allow or Deny) in Windows Firewall for specific applications, you will get this event from Windows Filtering Platform layer, because by default this layer is denying any incoming connections.
+  - ~[5150](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5150)~
+  - ~[5151](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5151)~
+  - [5155](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5155)
+  - [5157](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5157)
+  - [5159](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5159)
 
 ### 构造 block 事件
 
@@ -155,10 +169,10 @@ foreach ($event in $Events) {
 
 1. 打开 Filtering Platform Connection 的审计开关, `auditpol /set /subcategory:"{0CCE9226-69AE-11D9-BED3-505054503030}" /success:enable /failure:enable`
 1. 打开 Event Viewer, 构造一个 Custom View, 创建过滤器, 我们暂只关注 5155, 5157, 5159 三个事件.
-   ![filter example](20220427153055.png)
+   ![filter example](../attachments/20220427153055.png)
 1. 构造一个过滤器, 我们使用**WFPSampler.exe**来构造过滤器, 阻止监听本地的**80**端口, `.\WFPSampler.exe -s BASIC_ACTION_BLOCK -l FWPM_LAYER_ALE_AUTH_LISTEN_V4 -iplp 80`
 1. 使用一个第三方(非 IIS)的 http server, 这里使用的 nginx, 默认监听 80 端口, 双击启动启动则触发 5155 事件
-   ![触发审计事件示例](20220427154554.png)
+   ![触发审计事件示例](../attachments/20220427154554.png)
 1. 还原过滤器, `.\WFPSampler.exe -clean`
 1. 还原审计开关, `auditpol /set /category:"{0CCE9226-69AE-11D9-BED3-505054503030}" /success:disable /failure:disable`
 
@@ -255,7 +269,7 @@ typedef enum FWPM_NET_EVENT_TYPE_ {
 
 ### WFP 体系结构
 
-WFP(Windows Filter Platform) ![Windows 筛选平台的基本体系结构](https://docs.microsoft.com/zh-cn/windows/win32/fwp/images/wfp-architecture.png)
+WFP(Windows Filter Platform) ![Windows 筛选平台的基本体系结构](../attachments/wfp-architecture.png)
 
 ### 数据流
 
