@@ -46,9 +46,16 @@ for dp, dn, filenames in os.walk(rootPATH):
             f = os.path.join(dp, f)
             mds.append(f)
 
-# ![](2020-11-02-16-58-35.png)
-pattern = r"!\[[^\[\]]*?\]\(.*?([^\\\/\.]+?\.(png|jpg|gif|jpeg))\)"
-matchPatter = r"!\[([^\[\]]*?)\]\(.*?([^\\\/\.]+?\.(png|jpg|gif|jpeg))\)"
+# ![1](2020-11-02-16-58-35.png)
+# ![2](./2020-11-02-16-58-35.png)
+# ![3](.\2020-11-02-16-58-35.png)
+# ![4](..\2020-11-02-16-58-35.png)
+# ![5](../2020-11-02-16-58-35.png)
+# ![1](http://2020-11-02-16-58-35.png)
+# ![2](http:\\2020-11-02-16-58-35.png)
+# ![filter example](../attachments/20220427153055.png)
+pattern = r"!\[[^\[\]]*?\]\((?:(?!:http).)*?([^\\\/\.]+?\.(png|jpg|gif|jpeg))\)"
+matchPatter = r"!\[([^\[\]]*?)\]\((?:(?!:http).)*?([^\\\/\.]+?\.(png|jpg|gif|jpeg))\)"
 
 
 def get_depth(path: str):

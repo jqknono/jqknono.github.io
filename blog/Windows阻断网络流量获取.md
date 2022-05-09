@@ -263,7 +263,8 @@ typedef enum FWPM_NET_EVENT_TYPE_ {
 
 ## 结论
 
-使用打开审计, 监控日志生成事件的方式来获得阻断事件.
+需求仅需要知道事件发生, 不需要即时处理事件, 另外开发驱动会带来更大的风险, 因此决定使用事件审计, 监控日志生成事件的方式来获得阻断事件.  
+新开一个线程来使用[NotifyChangeEventLog](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-notifychangeeventlog)来监控日志记录事件.
 
 ## 附录
 
