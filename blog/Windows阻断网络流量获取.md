@@ -148,14 +148,14 @@ foreach ($event in $Events) {
   - 这类事件产生量非常大，建议关注**5157**事件, 它记录了几乎相同的信息, 但是 5157 基于链接记录而不是基于数据包.
   - Failure events volume typically is very high for this subcategory and typically used for troubleshooting. If you need to monitor blocked connections, it is better to use “5157(F): The Windows Filtering Platform has blocked a connection,” because it contains almost the same information and generates per-connection, not per-packet.
     ![建议5157](../attachments/20220506121611.png)
-  - ~[5152](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5152)~
-  - ~[5153](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5153)~
+  - ~~[5152](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5152)~~
+  - ~~[5153](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5153)~~
 - [Audit Filtering Platform Connection](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-filtering-platform-connection)
   - 建议只关注失败事件, 如被阻止的连接, 按需关注允许的链接.
   - [5031](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5031)
     - If you don’t have any firewall rules (Allow or Deny) in Windows Firewall for specific applications, you will get this event from Windows Filtering Platform layer, because by default this layer is denying any incoming connections.
-  - ~[5150](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5150)~
-  - ~[5151](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5151)~
+  - ~~[5150](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5150)~~
+  - ~~[5151](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5151)~~
   - [5155](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5155)
   - [5157](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5157)
   - [5159](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5159)
@@ -270,7 +270,7 @@ typedef enum FWPM_NET_EVENT_TYPE_ {
 
 ### WFP 体系结构
 
-WFP(Windows Filter Platform) ![Windows 筛选平台的基本体系结构](../attachments/wfp-architecture.png)
+WFP(Windows Filter Platform) ![Windows 筛选平台的基本体系结构](https://docs.microsoft.com/en-us/windows/win32/fwp/images/wfp-architecture.png)
 
 ### 数据流
 
