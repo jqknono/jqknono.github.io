@@ -82,6 +82,10 @@ reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVer
 # 禁用windows service
 sc stop "wsearch" && sc config "wsearch" start=disabled
 set-service -name "wsearch" -status Stopped -StartupType Disabled
+
+# 禁用defender
+Set-MpPreference -DisableRealtimeMonitoring $true
+New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Name DisableAntiSpyware -Value 1 -PropertyType DWORD -Force
 ```
 
 ## 建议的应用
@@ -117,6 +121,8 @@ winget install --id OpenJS.NodeJS.LTS
 winget install --id GoLang.Go
 winget install --id Microsoft.ASPNetCore.6-x64
 winget install --id Microsoft.dotnet
+winget install --id Microsoft.OpenJDK.17
+winget install --id Microsoft.dotNetFramework
 ```
 
 ## 可选应用
@@ -169,5 +175,4 @@ Set-ScheduledTask -TaskName "T1" -TaskPath "jqknono" -Trigger $trigger1
 
 ## 工具配置
 
-- [[vim]]
 
