@@ -1,0 +1,19 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+gemspec
+
+gem "jekyll", ENV["JEKYLL_VERSION"] if ENV["JEKYLL_VERSION"]
+gem "kramdown-parser-gfm" if ENV["JEKYLL_VERSION"] == "~> 3.9"
+
+# gem "github-pages", group: :jekyll_plugins
+
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.12"
+  gem "kramdown-parser-gfm" if ENV["JEKYLL_VERSION"] == "~> 3.9"
+  gem "jekyll-optional-front-matter", "~> 0.3.2"
+  gem "jekyll-relative-links", "~> 0.6.1"
+  gem "jekyll-readme-index", "~> 0.3.0"
+  gem "jekyll-default-layout", "~> 0.1.4"
+  gem "jekyll-titles-from-headings", "~> 0.5.3"
+end

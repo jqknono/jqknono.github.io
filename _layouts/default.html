@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  {%- include head.html -%}
+
+  <body>
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">{{ content }}</div>
+    </main>
+
+    {%- include footer.html -%}
+
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    >
+      MathJax = {
+          tex: {
+            inlineMath: [['$', '$']]
+          }
+        };
+    </script>
+
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [["$", "$"]],
+        },
+      };
+    </script>
+  </body>
+</html>

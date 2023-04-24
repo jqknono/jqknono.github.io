@@ -1,0 +1,27 @@
+{
+    "recommendations": [
+        "foam.foam-vscode",
+        "alefragnani.bookmarks",
+        "ms-vscode.cpptools",
+        "ms-dotnettools.csharp",
+        "eamodio.gitlens",
+        "golang.go",
+        "xabikos.javascriptsnippets",
+        "ms-vscode.vscode-typescript-next",
+        "quicktype.quicktype",
+        "esbenp.prettier-vscode",
+        "ryu1kn.text-marker",
+        "visualstudioexptteam.vscodeintellicode",
+        "dotjoshjohnson.xml",
+        "rangav.vscode-thunder-client",
+        "csholmq.excel-to-markdown-table",
+        "christian-kohler.path-intellisense",
+        "ms-python.vscode-pylance",
+        "telesoho.vscode-markdown-paste-image",
+        "formulahendry.code-runner",
+        "github.copilot",
+        "yinfei.luahelper",
+        "rogalmic.bash-debug",
+        "github.copilot-nightly"
+    ]
+}

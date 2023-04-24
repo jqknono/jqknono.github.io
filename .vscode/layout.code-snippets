@@ -1,0 +1,26 @@
+{
+    // Place your jqknono.github.io workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+    // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+    // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+    // used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+    // Placeholders with the same ids are connected.
+    // [Snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
+    // Example:
+    "layout": {
+        "prefix": "layout",
+        "scope": "markdown",
+        "body": [
+            "---",
+            "layout: ${1|page,post|}",
+            "title: ${2:$TM_FILENAME_BASE}",
+            "published: ${3|false,true|}",
+            "categories: ${4|未分类,书评,调研,集群,系统,运维,开发,通识,博弈,数据|}",
+            "tags: $4, ${RELATIVE_FILEPATH/.*?([^\\\\]+)\\\\[^\\\\]+\\.md/$1/g}",
+            "date: ${5:$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND}",
+            "---",
+            ""
+        ],
+        "description": "Add front matter for post"
+    }
+}

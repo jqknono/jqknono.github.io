@@ -1,0 +1,20 @@
+---
+layout: base
+---
+
+<article class="post">
+  <header class="post-header" id="content_header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">{{ content }}</div>
+
+  <script>
+    // remove the content_header if content has header
+    var content_header = document.getElementById("content_header");
+    var content = document.getElementsByClassName("post-content")[0];
+    if (content.getElementsByTagName("h1").length > 0) {
+      content_header.style.display = "none";
+    }
+  </script>
+</article>

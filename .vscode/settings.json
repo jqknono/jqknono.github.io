@@ -1,0 +1,18 @@
+{
+    "editor.overviewRulerBorder": false,
+    "files.defaultLanguage": "markdown",
+    "files.exclude": {
+        ".jekyll-cache": true,
+        "**/node_modules": true
+    },
+    "files.watcherExclude": {
+        "**/node_modules": true
+    },
+    "foam.edit.linkReferenceDefinitions": "withExtensions",
+    "foam.openDailyNote.directory": "_posts",
+    "foam.openDailyNote.titleFormat": "fullDate",
+    "prettier.singleQuote": false,
+    "foam.dateSnippets.afterCompletion": "createNote",
+    "foam.files.newNotePath": "currentDir",
+    "foam.logging.level": "info"
+}
