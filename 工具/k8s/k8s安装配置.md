@@ -27,26 +27,6 @@ kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
 kubeadm init --service-cidr=192.168.200.1/24 --pod-network-cidr=192.168.201.1/24
 # 6. 加入node
 kubeadm join 192.168.205.145:6443 --token {$token} --discovery-token-ca-cert-hash sha256:{$hash}
-# 7. 配置网络
-# 8. 配置dashboard
-# 9. 配置ingress
-# 10. 配置helm
-# 11. 配置prometheus
-# 12. 配置grafana
-# 13. 配置elasticsearch
-# 14. 配置kibana
-# 15. 配置fluentd
-# 16. 配置filebeat
-# 17. 配置logstash
-# 18. 配置metricbeat
-# 19. 配置heartbeat
-# 20. 配置packetbeat
-# 21. 配置auditbeat
-# 22. 配置apm-server
-# 23. 配置apm-agent
-# 24. 配置apm-ui
-# 25. 配置apm-server
-# 26. 配置apm-agent
 ```
 
 ## tips
@@ -83,8 +63,7 @@ sudo apt-get install \
     lsb-release
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
@@ -139,8 +118,8 @@ kubeadm reset
 # --image-repository=registry.aliyuncs.com/google_containers
 # --service-cidr=10.1.0.0/16
 # --kubernetes-version v1.26.0
-kubeadm init --apiserver-advertise-address=192.168.205.145 --pod-network-cidr=10.244.0.0/16
-
+kubeadm init --apiserver-advertise-address=10.106.121.47 --pod-network-cidr=10.244.0.0/16
+kubeadm init --apiserver-advertise-address=10.106.121.47 --image-repository registry.aliyuncs.com/google_containers --pod-network-cidr=10.244.0.0/16 --v=5
 # 根据kubeadm init ... 最后一行的信息
 # master节点生成加入集群的命令
 kubeadm token create --print-join-command
@@ -176,9 +155,9 @@ systemctl status containerd
 systemctl restart containerd
 
 # 日志
-journalctl -u kubelet -r
+journalctl -ru kubelet
 journalctl -xeu kubelet
-journalctl -u kubelet -f
+journalctl -fu kubelet
 
 # 安装containerd
 sudo mkdir -p /etc/apt/keyrings
@@ -192,12 +171,17 @@ wget https://github.com/containerd/containerd/releases/download/v1.6.12/containe
 tar xvf containerd-1.6.12-linux-amd64.tar.gz
 systemctl stop containerd
 cd bin
-cp * /usr/bin/
+yes | cp * /usr/bin/
 systemctl start containerd
 
 # [failed to validate kubelet flags: the container runtime endpoint address was not specified or empty, use --container-runtime-endpoint to set]
 # https://stackoverflow.com/questions/75131916/failed-to-validate-kubelet-flags-the-container-runtime-endpoint-address-was-not
-
+wget https://github.com/containerd/containerd/releases/download/v1.6.12/containerd-1.6.12-linux-amd64.tar.gz
+tar xvf containerd-1.6.12-linux-amd64.tar.gz
+systemctl stop containerd
+cd bin
+cp * /usr/bin/
+systemctl start containerd
 
 # /proc/sys/net/bridge/bridge-nf-call-iptables does not exist
 # https://github.com/weaveworks/weave/issues/2789
@@ -214,6 +198,7 @@ lsof -i -P -n | grep LISTEN
 # [WARNING Port-10250]: Port 10250 is in use
 rm -rf /root/.kube/
 rm -rf /etc/kubernetes
+kubeadm reset --cri-socket=/var/run/cri-dockerd.sock
 
 # install flannel
 kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/v0.20.2/Documentation/kube-flannel.yml

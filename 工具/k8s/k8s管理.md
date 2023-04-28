@@ -27,7 +27,7 @@ curl http://localhost:8001/api/v1/namespaces/default/pods/${POD_NAME}/proxy/
 kubectl delete kubernetes-bootcamp
 
 # expose service
-kuberctl expose deployment kubernetes-bootcamp --type="NodePort" --port 8080
+kubectl expose deployment kubernetes-bootcamp --type="NodePort" --port 8080
 kubectl get services
 curl http://localhost:31061
 

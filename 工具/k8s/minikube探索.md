@@ -2,18 +2,51 @@
 
 - 应使用非 root 用户运行 minikube
 
+## Start
+
+```bash
+minikube start -p minikube --nodes 1 --cni calico --memory 8192 --cpus 4 --disk-size 15g --kubernetes-version v1.26.3 --driver=docker --vm --addons metrics-server --addons dashboard --addons ingress --addons ingress-dns --addons istio --addons istio-provisioner --addons ingress-dns 
+kubectl create namespace hivesec
+kubectl apply -f ./cluster-link-yaml/hivesec_rbac.yaml
+kubectl apply -f ./cluster-link-yaml/cluster-link.yaml
+kubectl apply -f ./hiveagent-yaml/hiveagent_daemonset.yaml
+```
+
+## 前期准备
+
 ```shell
 # 自动补全
 # auto complete kubectl, 自动补全
 apt install bash-completion
 echo "source <(kubectl completion bash)" >> ~/.bashrc
 echo 'alias k=kubectl' >>~/.bashrc
+echo 'alias m=minikube' >>~/.bashrc
 echo 'complete -o default -F __start_kubectl k' >>~/.bashrc
 kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
 source ~/.bashrc
-
-kubectl create deployment kb --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --replicas=3 --port 8080
 ```
+
+## default pods
+
+```shell
+kubectl create deployment kb --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --replicas=3
+kubectl expose deployment kb --type="NodePort" --port=8080
+
+kubectl create deployment es --image=kicbase/echo-server:1.0 --replicas=3
+kubectl expose deployment es --type="NodePort" --port=8080
+
+minikube service kb --url
+minikube service es --url
+```
+
+## dashbaord
+
+```shell
+minikube dashboard --port 30000
+kubectl proxy --address='0.0.0.0' --accept-hosts='^*$'
+```
+
+如果需要从外部访问 dashboard, 则需要运行 `kubectl proxy --address='0.0.0.0' --disable-filter=true`
 
 ## 参考
 
