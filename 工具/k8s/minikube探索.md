@@ -5,7 +5,7 @@
 ## Start
 
 ```bash
-minikube start -p minikube --nodes 1 --cni calico --memory 8192 --cpus 4 --disk-size 15g --kubernetes-version v1.26.3 --driver=docker --vm --addons metrics-server --addons dashboard --addons ingress --addons ingress-dns --addons istio --addons istio-provisioner --addons ingress-dns 
+minikube start -p minikube --nodes 3 --cni calico --memory 8192 --cpus 4 --disk-size 20g --kubernetes-version v1.26.3 --driver=docker --vm --addons ingress-dns --addons metrics-server --addons ingress --addons ingress-dns --addons istio --addons istio-provisioner --addons dashboard
 kubectl create namespace hivesec
 kubectl apply -f ./cluster-link-yaml/hivesec_rbac.yaml
 kubectl apply -f ./cluster-link-yaml/cluster-link.yaml
@@ -42,8 +42,14 @@ minikube service es --url
 ## dashbaord
 
 ```shell
-minikube dashboard --port 30000
+minikube addons enable metrics-server
+minikube addons enable dashboard
+# or
+minikube dashboard
+
 kubectl proxy --address='0.0.0.0' --accept-hosts='^*$'
+# or
+kubectl proxy --address='0.0.0.0' --disable-filter=true
 ```
 
 如果需要从外部访问 dashboard, 则需要运行 `kubectl proxy --address='0.0.0.0' --disable-filter=true`

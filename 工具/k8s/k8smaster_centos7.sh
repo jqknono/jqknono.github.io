@@ -15,7 +15,7 @@ gpgcheck=0
 enabled=1
 EOF
 
-    yum update -y
+    yum makecache
 }
 
 function install_prequisite() {
@@ -101,6 +101,13 @@ EOF
     # replace sandbox_image = "registry.k8s.io" with sandbox_image = "registry.aliyuncs.com/google_containers"
     sed -i 's/registry.k8s.io/registry.aliyuncs.com\/google_containers/g' /etc/containerd/config.toml
 
+    # config firewall
+    systemctl stop firewalld
+    systemctl disable firewalld
+
+    # config hostname random
+    hostnamectl set-hostname $(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 8 | head -n 1)
+
     # config system
     systemctl enable containerd
     systemctl enable kubelet
@@ -129,6 +136,43 @@ function config_env() {
     grep -q "alias kap='kubectl get pod --all-namespaces'" ~/.bashrc || echo "alias kap='kubectl get pod --all-namespaces'" >>~/.bashrc
     grep -q "alias kas='kubectl get service --all-namespaces'" ~/.bashrc || echo "alias kas='kubectl get service --all-namespaces'" >>~/.bashrc
     grep -q "alias kad='kubectl get deployment --all-namespaces'" ~/.bashrc || echo "alias kad='kubectl get deployment --all-namespaces'" >>~/.bashrc
+}
+
+function install_calico() {
+    kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/calico.yaml
+}
+
+function install_helm() {
+    curl -fsSL https://mirrors.aliyun.com/kubernetes/helm/helm-v3.6.3-linux-amd64.tar.gz -o helm.tar.gz
+    tar -zxvf helm.tar.gz
+    mv linux-amd64/helm /usr/local/bin/helm
+    rm -rf linux-amd64 helm.tar.gz
+    helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+    helm repo add bitnami https://charts.bitnami.com/bitnami
+    helm repo update
+}
+
+function install_istio() {
+    curl -L https://istio.io/downloadIstio | sh -
+    cd istio-1.11.2
+    export PATH=$PWD/bin:$PATH
+    istioctl install --set profile=demo -y
+    kubectl label namespace default istio-injection=enabled
+    kubectl apply -f samples/addons
+    cd ..
+    rm -rf istio-1.11.2
+}
+
+function install_dashboard() {
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.3.1/aio/deploy/recommended.yaml
+    kubectl apply -f dashboard-adminuser.yaml
+    kubectl apply -f dashboard-rolebinding.yaml
+    kubectl apply -f dashboard-ingress.yaml
+}
+
+function install_ingress() {
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.0/deploy/static/provider/baremetal/deploy.yaml
+    kubectl apply -f ingress-nginx.yaml
 }
 
 function main() {
@@ -199,48 +243,11 @@ main
 if [ $is_master == true ]; then
     kubeadm reset -f
     kubeadm init --pod-network-cidr=192.168.0.0/16 --image-repository registry.aliyuncs.com/google_containers
-    echo -e "\033[32m Run \033[33mkubeadmin join\033[32m command on worker node \033[0m"
+    echo -e "\033[32m Run \033[33mkubeadm join\033[32m command on worker node \033[0m"
 fi
 
 export KUBECONFIG=/etc/kubernetes/admin.conf
 
 echo -e "\033[32m DONE! \033[0m"
-echo -e "\033[32mRun\033[33m kubeadmin token create --print-join-command \033[32mto get join command \033[0m"
+echo -e "\033[32mRun\033[33m kubeadm token create --print-join-command \033[32mto get join command \033[0m"
 source ~/.bashrc
-
-function install_calico() {
-    kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/calico.yaml
-}
-
-function install_helm() {
-    curl -fsSL https://mirrors.aliyun.com/kubernetes/helm/helm-v3.6.3-linux-amd64.tar.gz -o helm.tar.gz
-    tar -zxvf helm.tar.gz
-    mv linux-amd64/helm /usr/local/bin/helm
-    rm -rf linux-amd64 helm.tar.gz
-    helm repo add stable https://kubernetes-charts.storage.googleapis.com/
-    helm repo add bitnami https://charts.bitnami.com/bitnami
-    helm repo update
-}
-
-function install_istio() {
-    curl -L https://istio.io/downloadIstio | sh -
-    cd istio-1.11.2
-    export PATH=$PWD/bin:$PATH
-    istioctl install --set profile=demo -y
-    kubectl label namespace default istio-injection=enabled
-    kubectl apply -f samples/addons
-    cd ..
-    rm -rf istio-1.11.2
-}
-
-function install_dashboard() {
-    kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.3.1/aio/deploy/recommended.yaml
-    kubectl apply -f dashboard-adminuser.yaml
-    kubectl apply -f dashboard-rolebinding.yaml
-    kubectl apply -f dashboard-ingress.yaml
-}
-
-function install_ingress() {
-    kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.0/deploy/static/provider/baremetal/deploy.yaml
-    kubectl apply -f ingress-nginx.yaml
-}

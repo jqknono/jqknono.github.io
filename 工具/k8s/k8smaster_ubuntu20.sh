@@ -108,6 +108,12 @@ EOF
     # replace sandbox_image = "registry.k8s.io" with sandbox_image = "registry.aliyuncs.com/google_containers"
     sed -i 's/registry.k8s.io/registry.aliyuncs.com\/google_containers/g' /etc/containerd/config.toml
 
+    # config firewall
+    ufw disable
+
+    # config hostname random
+    hostnamectl set-hostname $(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 8 | head -n 1)
+
     # config system
     systemctl enable containerd
     systemctl enable kubelet
@@ -126,7 +132,7 @@ function config_completion() {
     grep -q "source <(kubectl completion bash)" ~/.bashrc || echo "source <(kubectl completion bash)" >>~/.bashrc
     grep -q "source <(kubeadm completion bash)" ~/.bashrc || echo "source <(kubeadm completion bash)" >>~/.bashrc
 
-    kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
+    kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl >/dev/null
     grep -q "complete -o default -F __start_kubectl k" ~/.bashrc || echo "complete -o default -F __start_kubectl k" >>~/.bashrc
 }
 
@@ -206,11 +212,11 @@ main
 if [ $is_master == true ]; then
     kubeadm reset -f
     kubeadm init --pod-network-cidr=192.168.0.0/16 --image-repository registry.aliyuncs.com/google_containers
-    echo -e "\033[32m Run \033[33mkubeadmin join\033[32m command on worker node \033[0m"
+    echo -e "\033[32m Run \033[33mkubeadm join\033[32m command on worker node \033[0m"
 fi
 
 export KUBECONFIG=/etc/kubernetes/admin.conf
 
 echo -e "\033[32m DONE! \033[0m"
-echo -e "\033[32mRun\033[33m kubeadmin token create --print-join-command \033[32mto get join command \033[0m"
+echo -e "\033[32mRun\033[33m kubeadm token create --print-join-command \033[32mto get join command \033[0m"
 source ~/.bashrc
