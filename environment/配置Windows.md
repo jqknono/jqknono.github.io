@@ -136,6 +136,12 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Nam
 
 # openssh shell set to PowerShell
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
+
+# 移动docker-desktop-data
+wsl --shutdown
+wsl --export docker-desktop-data E:\docker\docker-desktop-data.tar
+wsl --unregister docker-desktop-data
+wsl --import docker-desktop-data E:\docker E:\docker\docker-desktop-data.tar --version 2
 ```
 
 ## 建议的应用
