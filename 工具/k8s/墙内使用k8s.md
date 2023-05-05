@@ -119,6 +119,6 @@ gcr.io/google-samples 镜像无法下载, 使用方案:
 
 ```shell
 # kubectl create deployment kb --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --replicas=3
-# gcr.io/google-samples/ => anjia0532/google-samples.
+# 替换gcr.io/google-samples/ => anjia0532/google-samples.
 kubectl create deployment kb --image=anjia0532/google-samples.kubernetes-bootcamp:v1 --replicas=3
 ```

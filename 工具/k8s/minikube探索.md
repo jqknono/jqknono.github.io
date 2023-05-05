@@ -5,7 +5,7 @@
 ## Start
 
 ```bash
-minikube start -p minikube --nodes 3 --cni calico --memory 8192 --cpus 4 --disk-size 20g --kubernetes-version v1.26.3 --driver=docker --vm --addons ingress-dns --addons metrics-server --addons ingress --addons ingress-dns --addons istio --addons istio-provisioner --addons dashboard
+minikube start -p minikube --nodes 3 --cni calico --kubernetes-version v1.26.3 --driver=docker --vm --addons ingress-dns --addons ingress --addons metrics-server --addons dashboard
 kubectl create namespace hivesec
 kubectl apply -f ./cluster-link-yaml/hivesec_rbac.yaml
 kubectl apply -f ./cluster-link-yaml/cluster-link.yaml
