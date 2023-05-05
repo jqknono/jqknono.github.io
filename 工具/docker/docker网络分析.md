@@ -40,7 +40,7 @@ bridge 模式是 docker 默认的网络模式，容器使用 docker0 网桥，�
 - 连在同一网桥上的容器可以相互通信
 - 容器与宿主机之间可以相互通信
 
-![picture 1](https://jn-image-bed-ori.jqknono.com/docker%E7%BD%91%E7%BB%9C_68e5fb175d8f52f30132182be79a6fd6f354bc4672e3b1b80b28eec05c163023.png)
+![picture 1](http://jn-image-bed-cdn.jqknono.com/docker%E7%BD%91%E7%BB%9C_68e5fb175d8f52f30132182be79a6fd6f354bc4672e3b1b80b28eec05c163023.png)
 
 分析 iptables 规则
 
@@ -222,14 +222,14 @@ Docker Swarm 架构包含两种角色，manager 和 node，前者是 Swarm Daemo
 - TCP 2376 用于群集管理通信。
 - TCP 2377 用于群集管理通信。
 
-![picture 2](https://jn-image-bed-ori.jqknono.com/docker%E7%BD%91%E7%BB%9C_a7246d7a4140cb32b932129216313e634cb7dbdae0c8bef5a7ad0a0174e84593.png)
-![picture 3](https://jn-image-bed-ori.jqknono.com/docker%E7%BD%91%E7%BB%9C_19916ca2dcc618c9d1416268e801bdf17987469963de4c321066e9d13529a676.png)
-![picture 4](https://jn-image-bed-ori.jqknono.com/docker%E7%BD%91%E7%BB%9C_2b89ce8d3b71cc74dbf37269c15ad9d1fe8de38f7fe585ec067c4c125bb1b8bc.png)  
-![picture 5](https://jn-image-bed-ori.jqknono.com/docker%E7%BD%91%E7%BB%9C_0af2f7a6ef3f70d5403672d206150811fbd727133a6392c75a89a03bf636b6b0.png)
+![picture 2](http://jn-image-bed-cdn.jqknono.com/docker%E7%BD%91%E7%BB%9C_a7246d7a4140cb32b932129216313e634cb7dbdae0c8bef5a7ad0a0174e84593.png)
+![picture 3](http://jn-image-bed-cdn.jqknono.com/docker%E7%BD%91%E7%BB%9C_19916ca2dcc618c9d1416268e801bdf17987469963de4c321066e9d13529a676.png)
+![picture 4](http://jn-image-bed-cdn.jqknono.com/docker%E7%BD%91%E7%BB%9C_2b89ce8d3b71cc74dbf37269c15ad9d1fe8de38f7fe585ec067c4c125bb1b8bc.png)  
+![picture 5](http://jn-image-bed-cdn.jqknono.com/docker%E7%BD%91%E7%BB%9C_0af2f7a6ef3f70d5403672d206150811fbd727133a6392c75a89a03bf636b6b0.png)
 
 路由决策
 
-![picture 1](https://jn-image-bed-ori.jqknono.com/docker%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90_d676f3c25df4204b37d664e0664a8e4b4defc7fcee22a59578bbd9806619a8eb.png)
+![picture 1](http://jn-image-bed-cdn.jqknono.com/docker%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90_d676f3c25df4204b37d664e0664a8e4b4defc7fcee22a59578bbd9806619a8eb.png)
 
 ## host 网络
 
@@ -281,8 +281,8 @@ Docker Swarm 架构包含两种角色，manager 和 node，前者是 Swarm Daemo
 
 示例:
 
-![picture 1](https://jn-image-bed-ori.jqknono.com/docker%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90_b3282a52d70102a594093bbf10f9ef5a7090ab5c01b81fb5580ade000a78433c.png)
-![picture 2](https://jn-image-bed-ori.jqknono.com/docker%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90_b1d9c7a6847621cb8fd72f18d686a8299a5326ae3d4a855758773c550b890bf6.png)
+![picture 1](http://jn-image-bed-cdn.jqknono.com/docker%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90_b3282a52d70102a594093bbf10f9ef5a7090ab5c01b81fb5580ade000a78433c.png)
+![picture 2](http://jn-image-bed-cdn.jqknono.com/docker%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90_b1d9c7a6847621cb8fd72f18d686a8299a5326ae3d4a855758773c550b890bf6.png)
 
 ## 参考
 

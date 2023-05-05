@@ -21,7 +21,7 @@
 
 ## docker 的基本架构
 
-![picture 1](https://jn-image-bed-ori.jqknono.com/docker%E4%BB%8B%E7%BB%8D_9addfd105b56468ceadb8bdc501294ff6ff727d3c67ec55dd734dffb1aaa3369.png)
+![picture 1](http://jn-image-bed-cdn.jqknono.com/docker%E4%BB%8B%E7%BB%8D_9addfd105b56468ceadb8bdc501294ff6ff727d3c67ec55dd734dffb1aaa3369.png)
 
 - [[docker网络]]
 

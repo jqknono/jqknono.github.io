@@ -15,19 +15,19 @@ CoPilot 是一款基于机器学习的代码补全工具，它可以帮助你快
 
 | 能力                   | 说明                   | 备注                                                     | example                                                                                                                                                                       |
 | ---------------------- | ---------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Explain`              | 生成代码片段的解释说明 | 有高级选项定制提示词, 更清晰说明自己的需求               | ![picture 23](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_d1fa00c5ca291eb2653414e59fde99442642597141e0a75b9b10428e861e9f61.png) |
-| `Show example code`    | 生成代码片段的示例代码 | 有高级选项定制                                           | ![picture 7](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_d7812a790a01a82a7147c228fb19327acdee49e6fb2b2563b24cf7033f0ec8f1.png)  |
-| `Language Translation` | 生成代码片段的翻译     | 此翻译是基于编程语言的翻译, 比如*C++ -> Python*          | ![picture 8](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_314becf590fc13c4cd50d2c6012c7d5cd412f980b8e1e62f65edc038f8504cef.png)  |
-| `Readable`             | 提高一段代码的可读性   | 不是简单的格式化, 是真正的可读性提升                     | ![picture 9](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_661f2b24065da3a7a97bf74fccd7a6054e56c8a845e01bf735bb4963c8a0322f.png)  |
-| `Add Types`            | 类型推测               | 将自动类型的变量改为明确的类型                           | ![picture 10](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_344fe1f567ded960d376349e8d71ad6c0372707cbeb6864db45621e7001010ec.png) |
-| `Fix bug`              | 修复 bug               | 修复一些常见的 bug                                       | ![picture 11](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_1ed9d415e2dce8a383f86628af5f17916079b4e86319a9db3fc113984561fdf8.png) |
-| `Debug`                | 使代码更容易调试       | 增加打印日志, 或增加临时变量以用于断点                   | ![picture 12](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_d808303bd9bb79d84d66bbb96ff5488a01693bf2d051c73ec6c8f82c0ae5a804.png) |
-| `Clean`                | 清理代码               | 清理代码的无用部分, 注释/打印/废弃代码等                 | ![picture 13](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_3c232a3c3dec707c8487565fe04293f6d5240e4d81e14e47d5209ad2c1e20fd6.png) |
-| `List steps`           | 列出代码的步骤         | 有的代码的执行严格依赖顺序, 需要明确注释其执行顺序       | ![picture 14](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_9a9ed47f8aa57827287fb8dcbcce56ea65b04eae9ac3f778e5b9c8e84b85532c.png) |
-| `Make robust`          | 使代码更健壮           | 考虑边界/多线程/重入等                                   | ![picture 15](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_2ebfd57bb50526f6587449927fec16a984bf936b2bab96bbba32432913080bb3.png) |
-| `Chunk`                | 将代码分块             | 一般希望函数有效行数<=50, 嵌套<=4, 扇出<=7, 圈复杂度<=20 | ![picture 16](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_a47bd1be2106a86748bcf4ff43142cdab2ba3a05e144e12070dbad7cb1a58e46.png) |
-| `Document`             | 生成代码的文档         | 通过写注释生成代码, 还可以通过代码生成注释和文档         | ![picture 17](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_46baeeaf185f73efb809a107402367b2490e452e7f0ac41c5b54a642393af20f.png) |
-| `Custom`               | 自定义操作             | 告诉 copilot 如何操作你的代码                            | ![picture 18](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_2666bbe8e7c0691f65907dbfada1320a4f1fedefaaecf3b058eff8f3ed63cfd4.png) |
+| `Explain`              | 生成代码片段的解释说明 | 有高级选项定制提示词, 更清晰说明自己的需求               | ![picture 23](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_d1fa00c5ca291eb2653414e59fde99442642597141e0a75b9b10428e861e9f61.png) |
+| `Show example code`    | 生成代码片段的示例代码 | 有高级选项定制                                           | ![picture 7](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_d7812a790a01a82a7147c228fb19327acdee49e6fb2b2563b24cf7033f0ec8f1.png)  |
+| `Language Translation` | 生成代码片段的翻译     | 此翻译是基于编程语言的翻译, 比如*C++ -> Python*          | ![picture 8](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_314becf590fc13c4cd50d2c6012c7d5cd412f980b8e1e62f65edc038f8504cef.png)  |
+| `Readable`             | 提高一段代码的可读性   | 不是简单的格式化, 是真正的可读性提升                     | ![picture 9](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_661f2b24065da3a7a97bf74fccd7a6054e56c8a845e01bf735bb4963c8a0322f.png)  |
+| `Add Types`            | 类型推测               | 将自动类型的变量改为明确的类型                           | ![picture 10](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_344fe1f567ded960d376349e8d71ad6c0372707cbeb6864db45621e7001010ec.png) |
+| `Fix bug`              | 修复 bug               | 修复一些常见的 bug                                       | ![picture 11](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_1ed9d415e2dce8a383f86628af5f17916079b4e86319a9db3fc113984561fdf8.png) |
+| `Debug`                | 使代码更容易调试       | 增加打印日志, 或增加临时变量以用于断点                   | ![picture 12](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_d808303bd9bb79d84d66bbb96ff5488a01693bf2d051c73ec6c8f82c0ae5a804.png) |
+| `Clean`                | 清理代码               | 清理代码的无用部分, 注释/打印/废弃代码等                 | ![picture 13](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_3c232a3c3dec707c8487565fe04293f6d5240e4d81e14e47d5209ad2c1e20fd6.png) |
+| `List steps`           | 列出代码的步骤         | 有的代码的执行严格依赖顺序, 需要明确注释其执行顺序       | ![picture 14](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_9a9ed47f8aa57827287fb8dcbcce56ea65b04eae9ac3f778e5b9c8e84b85532c.png) |
+| `Make robust`          | 使代码更健壮           | 考虑边界/多线程/重入等                                   | ![picture 15](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_2ebfd57bb50526f6587449927fec16a984bf936b2bab96bbba32432913080bb3.png) |
+| `Chunk`                | 将代码分块             | 一般希望函数有效行数<=50, 嵌套<=4, 扇出<=7, 圈复杂度<=20 | ![picture 16](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_a47bd1be2106a86748bcf4ff43142cdab2ba3a05e144e12070dbad7cb1a58e46.png) |
+| `Document`             | 生成代码的文档         | 通过写注释生成代码, 还可以通过代码生成注释和文档         | ![picture 17](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_46baeeaf185f73efb809a107402367b2490e452e7f0ac41c5b54a642393af20f.png) |
+| `Custom`               | 自定义操作             | 告诉 copilot 如何操作你的代码                            | ![picture 18](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_2666bbe8e7c0691f65907dbfada1320a4f1fedefaaecf3b058eff8f3ed63cfd4.png) |
 
 ## Copilot 是什么
 
@@ -48,7 +48,7 @@ Copilot 通过以下方式参与编码工作, 实现扮演结对程序员这一�
 
 Copilot 是个大语言模型, 它不能理解我们的代码, 我们也不能理解 Copilot 的模型, 这里的理解是一名程序员与一群程序员之间的相互理解. 大家基于一些共识而一起写代码.
 
-![picture 3](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_190834b0ac1d4a577a378db9499cbbd92b0e282e5655afe12958d5ef0c623b93.png)
+![picture 3](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_190834b0ac1d4a577a378db9499cbbd92b0e282e5655afe12958d5ef0c623b93.png)
 
 Copilot 搜集信息以理解上下文, 信息包括:
 
@@ -64,7 +64,7 @@ Copilot 不仅仅是通过一行注释去理解, 它搜集了足够多的上下�
 
 | 整段建议                                                                                                                                                                     | inline 建议                                                                                                                                                                  |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![picture 4](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_87e8b4e82681d582d86fd956a0699f2b1819c97e93ef415f1b82b4df6a6ebdf9.png) | ![picture 5](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_2e4432a4c4d3b6d6c9d8128c581255df1e15ce2a2d329436ed11f82f925a0475.png) |
+| ![picture 4](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_87e8b4e82681d582d86fd956a0699f2b1819c97e93ef415f1b82b4df6a6ebdf9.png) | ![picture 5](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_2e4432a4c4d3b6d6c9d8128c581255df1e15ce2a2d329436ed11f82f925a0475.png) |
 
 最为人所熟知的获取建议方式是**写注释而不是写代码**, 业务逻辑主要在注释中体现, 以此获得整段的建议. 但这可能会造成注释冗余的问题, 注释不是越多越好, 注释可以帮助理解, 但它不是代码主体. 良好的代码没有注释也清晰明了, 依靠的是合适的命名, 合理的设计以及清晰的逻辑. 使用 inline 建议时, 只要给出合适的变量名/函数名/类名, Copilot 总能给出合适的建议.
 
@@ -138,18 +138,18 @@ Copilot Labs 预置了以下功能:
 你可以通过 `Custom` 输入
 
 - `移除注释代码`  
-  ![picture 19](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_614c6acc2748781c5c29068cdbb2fbc740333ea6ed51fba0754efcb1edd6b71a.png)
+  ![picture 19](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_614c6acc2748781c5c29068cdbb2fbc740333ea6ed51fba0754efcb1edd6b71a.png)
 
 - `增加乘除的能力`  
-  ![picture 20](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_f37d70e208fc36eaaeee3804e54451a1029a6b9379de948c6cbc0c2635042c4d.png)
+  ![picture 20](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_f37d70e208fc36eaaeee3804e54451a1029a6b9379de948c6cbc0c2635042c4d.png)
 
 - `改写为go`
 
-![picture 21](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_917697cd20a2369623aed85e4da3a1675d65d977d6807019a22d9eb826ab3ed5.png)
+![picture 21](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_917697cd20a2369623aed85e4da3a1675d65d977d6807019a22d9eb826ab3ed5.png)
 
 - `添加三角函数计算`
 
-![picture 22](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_586415695d3697750e8ad02bcbb34f5b486c4c3214a01909cdd48e058d20096f.png)
+![picture 22](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_586415695d3697750e8ad02bcbb34f5b486c4c3214a01909cdd48e058d20096f.png)
 
 - `添加微分计算`, 中文这里不好用了, 使用 `support calculate differential`, 在低温模式时, 没有靠谱答案, 高温模式时, 有几个离谱答案.
 
@@ -193,7 +193,7 @@ Copilot Labs 预置了以下功能:
 
 这些翻译都由 Copilot 生成, 不能确定这些建议是基于模型生成, 还是基于翻译行为产生. 事实上你在表的`en`列中写的任何英语内容, 都可以被 Copilot 翻译(生成)到`zh`列中的内容.
 
-![picture 2](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_ca63de663b444d4ed991f3c75b1e076aa67841f296450dc8fbd564981b987816.gif)
+![picture 2](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_ca63de663b444d4ed991f3c75b1e076aa67841f296450dc8fbd564981b987816.gif)
 
 ## 设置项
 
@@ -245,7 +245,7 @@ Copilot 的信息收集
     - 在上下文信息非常少时
     - 是通用问题的解决方案
   - 如何避免与公开代码重复, 设置[filter](https://docs.github.com/en/copilot/configuring-github-copilot/configuring-github-copilot-settings-on-githubcom)  
-    ![picture 1](https://jn-image-bed-ori.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_78109727a2f1b98776d44fa87dbbf0b758b27081aa198da9c14ab070c0bd402a.png)
+    ![picture 1](http://jn-image-bed-cdn.jqknono.com/CoPilot%E7%9A%84%E7%94%A8%E6%B3%95%E5%88%86%E4%BA%AB_78109727a2f1b98776d44fa87dbbf0b758b27081aa198da9c14ab070c0bd402a.png)
 - 如何正确的使用 Copilot 生成的代码? 1. 自行测试/检视生成代码; 2. 不要在检视前自动编译或运行生成的代码.
 - Copilot 是否在每种自然语言都有相同的表现? 最佳表现是英语.
 - Copilot 是否会生成冒犯性内容? 已有过滤, 但是不排除可能出现.
