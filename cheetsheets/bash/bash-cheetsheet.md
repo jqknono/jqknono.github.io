@@ -72,7 +72,9 @@ start with `set -euo pipefail` to check error.
 | `!n:p`                   | Prints the command !n executes                                                    |
 | `!n:$`                   | Repeat arguments from the last command (i.e, from argument n to $)                |
 
-图片下载保存, 可设置为终端背景, [下载链接](http://jn-image-bed-cdn.jqknono.com/bash-cheetsheet_65852d39dfedf41777f7f118dbbfc134ffdeab65869a45b2e291e8b452b3ad01.png)
+图片下载保存, 可设置为终端背景
+
+![picture 1](https://s2.loli.net/2023/05/06/aucFkA2vhrRyf8b.png)
 
 ## bash-completion
 

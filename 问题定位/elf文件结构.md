@@ -1,8 +1,8 @@
 # elf 文件结构
 
-![picture 4](http://jn-image-bed-cdn.jqknono.com/elf%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84_4a3d8b2691b0250b75eabd42fa0f12b58401d1d42fbb1e53f0728e050b993352.png)
+![picture 5](https://s2.loli.net/2023/05/06/iSWevXQmDMK9rGp.png)  
 
-![picture 1](http://jn-image-bed-cdn.jqknono.com/elf%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84_bfc425981d836d950f690fc620e8114e54fad5c0244063d3d3b1411a187266f2.png)
+![picture 6](https://s2.loli.net/2023/05/06/itUcpuSGdTIs5Nz.png)  
 
 - File Header
 - Program Header

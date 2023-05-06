@@ -151,7 +151,8 @@ foreach ($event in $Events) {
 - [Audit Filtering Platform Packet Drop](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-filtering-platform-packet-drop)
   - 这类事件产生量非常大，建议关注**5157**事件, 它记录了几乎相同的信息, 但是 5157 基于链接记录而不是基于数据包.
   - Failure events volume typically is very high for this subcategory and typically used for troubleshooting. If you need to monitor blocked connections, it is better to use “5157(F): The Windows Filtering Platform has blocked a connection,” because it contains almost the same information and generates per-connection, not per-packet.
-    ![建议5157](http://jn-image-bed-cdn.jqknono.com/Windows%E9%98%BB%E6%96%AD%E7%BD%91%E7%BB%9C%E6%B5%81%E9%87%8F%E8%8E%B7%E5%8F%96_87fc15979d7e239eab78b86e68bcabcc6150f92eeaf3c7f57773b45bace7b636.png)  
+    ![建议5157](https://s2.loli.net/2023/05/06/gaoLAnlNu1QT3zf.png)  
+
 
   - ~~[5152](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5152)~~
   - ~~[5153](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5153)~~
@@ -213,11 +214,13 @@ Get-WinEvent -ListProvider "Microsoft-Windows-Security-Auditing"  | Select-Objec
 
 1. 打开 Filtering Platform Connection 的审计开关, `auditpol /set /subcategory:"{0CCE9226-69AE-11D9-BED3-505054503030}" /success:enable /failure:enable`
 1. 打开 Event Viewer, 构造一个 Custom View, 创建过滤器, 我们暂只关注 5155, 5157, 5159 三个事件.
-   ![filter example](http://jn-image-bed-cdn.jqknono.com/Windows%E9%98%BB%E6%96%AD%E7%BD%91%E7%BB%9C%E6%B5%81%E9%87%8F%E8%8E%B7%E5%8F%96_c0216608433146f56bd609aee2e9280527a0c3ca9d6fcbb8d1ba8cd4624542fa.png)  
+   ![filter example](https://s2.loli.net/2023/05/06/TjfMkws8pu4NZRW.png)  
+
 
 1. 构造一个过滤器, 我们使用**WFPSampler.exe**来构造过滤器, 阻止监听本地的**80**端口, `.\WFPSampler.exe -s BASIC_ACTION_BLOCK -l FWPM_LAYER_ALE_AUTH_LISTEN_V4 -iplp 80`
 1. 使用一个第三方(非 IIS)的 http server, 这里使用的 nginx, 默认监听 80 端口, 双击启动启动则触发 5155 事件
-   ![触发审计事件示例](http://jn-image-bed-cdn.jqknono.com/Windows%E9%98%BB%E6%96%AD%E7%BD%91%E7%BB%9C%E6%B5%81%E9%87%8F%E8%8E%B7%E5%8F%96_50b4f8b06103cc575bfa849962eef4029c29a7c7f0796913b93c4aadc3c24fb3.png)  
+   ![触发审计事件示例](https://s2.loli.net/2023/05/06/V6vlyFZ4bQa5G9Y.png)  
+
 
 1. 还原过滤器, `.\WFPSampler.exe -clean`
 1. 还原审计开关, `auditpol /set /category:"{0CCE9226-69AE-11D9-BED3-505054503030}" /success:disable /failure:disable`

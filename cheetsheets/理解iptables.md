@@ -2,4 +2,4 @@
 
 - [ ] 理解iptables.md
 
-![picture 1](http://jn-image-bed-cdn.jqknono.com/%E7%90%86%E8%A7%A3iptables_5ae103521fef318a7c58526b3d250e6dbfa0e17a3cd89871b82e38f1b43ba5bb.png)  
+![picture 1](https://s2.loli.net/2023/05/06/uW85KHNBoaVTLDe.png)  

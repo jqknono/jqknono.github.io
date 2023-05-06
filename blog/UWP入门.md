@@ -1,38 +1,25 @@
 # UWP入门
 
-* [1. Xaml](#1-xaml)
-* [1.1. XAML 简介](#11-xaml-简介)
-* [1.2. 最基础的控件(Control) -- TextBlock, Button](#12-最基础的控件control-textblock-button)
-* [2. MVVM](#2-mvvm)
-* [3. ViewModel 与 Model 的交互](#3-viewmodel-与-model-的交互)
-* [3.1. ViewModel 操控 Model 的数据](#31-viewmodel-操控-model-的数据)
-* [3.2. Model 通知 ViewModel -- event](#32-model-通知-viewmodel-event)
-* [4. View 与 ViewModel 的交互](#4-view-与-viewmodel-的交互)
-* [4.1. 数据绑定](#41-数据绑定)
-* [4.1.1. 绑定在 ViewModel](#411-绑定在-viewmodel)
-* [4.1.2. 绑定在其它 Control](#412-绑定在其它-control)
-* [4.1.3. 指定 DataContext](#413-指定-datacontext)
-* [5. (View 与 ViewModel) 实现消息通知 -- INotifyPropertyChanged](#5-view-与-viewmodel-实现消息通知-inotifypropertychanged)
-* [6. (View 与 ViewModel) ListView 绑定到实现了消息通知的源 -- ObservableCollection](#6-view-与-viewmodel-listview-绑定到实现了消息通知的源-observablecollection)
-* [7. (View) ListView 的 Item 模板(DataTemplate | UserControl)](#7-view-listview-的-item-模板datatemplate-usercontrol)
-* [7.1. DataTemplate](#71-datatemplate)
-* [7.2. UserControl](#72-usercontrol)
-* [7.2.1. DependencyProperty](#721-dependencyproperty)
-* [8. (ViewModel 与 Model) 数据转换 -- IValueConverter](#8-viewmodel-与-model-数据转换-ivalueconverter)
-* [9. (View) 修改 Control 的 Style](#9-view-修改-control-的-style)
-* [9.1. 在 Control 里定制 Style](#91-在-control-里定制-style)
-* [9.2. 使用统一的 Style -- ResourceDictionary](#92-使用统一的-style-resourcedictionary)
-* [9.3. 使用 ThemeResource](#93-使用-themeresource)
-* [10. 使用 Panel](#10-使用-panel)
-* [10.1. Grid](#101-grid)
-* [10.2. StackPanel](#102-stackpanel)
-* [11. (View) 自适应 UI (Adaptive UI)](#11-view-自适应-ui-adaptive-ui)
-* [12. 布局原则](#12-布局原则)
-* [13. 本地化(Localization)](#13-本地化localization)
-* [14. 命名方式](#14-命名方式)
-* [15. 注意](#15-注意)
+<!-- TOC tocDepth:2..3 chapterDepth:2..6 -->
 
-<!--more-->
+- [1.1. XAML 简介](#11-xaml-简介)
+- [1.2. 最基础的控件(Control) -- TextBlock, Button](#12-最基础的控件control----textblock-button)
+- [3.1. ViewModel 操控 Model 的数据](#31-viewmodel-操控-model-的数据)
+- [3.2. Model 通知 ViewModel -- event](#32-model-通知-viewmodel----event)
+- [4.1. 数据绑定](#41-数据绑定)
+  - [4.1.1. 绑定在 ViewModel](#411-绑定在-viewmodel)
+  - [4.1.2. 绑定在其它 Control](#412-绑定在其它-control)
+  - [4.1.3. 指定 DataContext](#413-指定-datacontext)
+- [7.1. DataTemplate](#71-datatemplate)
+- [7.2. UserControl](#72-usercontrol)
+  - [7.2.1. DependencyProperty](#721-dependencyproperty)
+- [9.1. 在 Control 里定制 Style](#91-在-control-里定制-style)
+- [9.2. 使用统一的 Style -- ResourceDictionary](#92-使用统一的-style----resourcedictionary)
+- [9.3. 使用 ThemeResource](#93-使用-themeresource)
+- [10.1. Grid](#101-grid)
+- [10.2. StackPanel](#102-stackpanel)
+
+<!-- /TOC -->
 
 # 1. Xaml
 

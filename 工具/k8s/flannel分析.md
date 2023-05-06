@@ -236,9 +236,8 @@ service_ip 有两个 ip, cluster-ip 和 external-ip, 在本示例中专指 clust
 
 flannel 的数据方向: **container->veth0->cni0->flannel.1->node1->node2->flannel.1->cni0->veth0->container**
 
-![picture 1](http://jn-image-bed-cdn.jqknono.com/flannel%E5%88%86%E6%9E%90_9bafa96687309680c858d8012b936ecb75bef2ba36cf08131ba76eaab619f568.png)
-
-![picture 2](http://jn-image-bed-cdn.jqknono.com/flannel%E5%88%86%E6%9E%90_5de6349df7410b86d1d33187d2f47a9298ba77a1f6beb50e3a806dc40e553056.png)
+![picture 1](https://s2.loli.net/2023/05/06/jxqHtdTSnK51sW8.png)  
+![picture 2](https://s2.loli.net/2023/05/06/zxGXBDcaKZq4jdO.png)
 
 ### 源码分析
 
@@ -373,7 +372,7 @@ Host-gw 的基本原理比较简单，是直接在 host 主机上配置 Overlay 
 
 UDP 模式和 vxlan 类似是一种隧道实现，即为 host 创建一个 tun 的设备，tun 设备是一个虚拟网路设备，通常一端连接着 kernel 网络协议栈，而另一端就取决于网络设备驱动的实现，一般连接着应用进程，网络数据包发送到这个 tun 设备上后从管道的出口到达应用程序，这个时候应用程序可以根据需求对数据包进行拆包和解包再回传给 eth0 或其他网络设备，从而到达隧道的另一端.flannel 的 udp 模式 tun 设备连接的另一端是 flanneld 进程.
 
-![picture 3](http://jn-image-bed-cdn.jqknono.com/flannel%E5%88%86%E6%9E%90_49de1a844a9769d1a9892fc246f723f4ced57f6d0b1ae990198d74a60ada4722.png)
+![picture 3](https://s2.loli.net/2023/05/06/Brzv8RfTd6bQDWs.png)
 
 ## wireguard
 
@@ -460,7 +459,7 @@ IPIP 类型的隧道是最简单的一种.它的开销最低，但只能封装 I
 
 效果:
 
-![picture 4](http://jn-image-bed-cdn.jqknono.com/flannel%E5%88%86%E6%9E%90_dc91d3b8f66a983b81990491b46cd531bed85322a94b6467cb7102eab3345f36.png)
+![picture 4](https://s2.loli.net/2023/05/06/cDJV6MoTpEKNFHq.png)
 
 ## 参考
 

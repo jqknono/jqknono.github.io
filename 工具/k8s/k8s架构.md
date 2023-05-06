@@ -16,7 +16,8 @@
 
 ## Kubernetes architecture
 
-![集群图](http://jn-image-bed-cdn.jqknono.com/md_imgs/202301291810835)
+![集群图](https://jn-image-bed-ori.jqknono.com/md_imgs/202301291810835)
+
 
 Master 负责管理整个集群。 Master 协调集群中的所有活动，例如调度应用、维护应用的所需状态、应用扩容以及推出新的更新。
 
@@ -55,7 +56,7 @@ Node 是一个虚拟机或者物理机，它在 Kubernetes 集群中充当工作
 
 - It is customary to not run apps on the node(s) running master components (Except when using small development clusters)
 
-![](http://jn-image-bed-cdn.jqknono.com/md_imgs/202301291853431.svg+xml)
+![](https://jn-image-bed-ori.jqknono.com/md_imgs/202301291853431.svg+xml)
 
 你可以使用 Kubernetes 命令行界面 Kubectl 创建和管理 Deployment。Kubectl 使用 Kubernetes API 与集群进行交互。Kubectl 会将所有的命令发送到 Kubernetes API Server，然后 Kubernetes API Server 会将命令发送到 Master 节点，Master 节点会将命令发送到 Node 节点，Node 节点会执行命令。
 
@@ -76,8 +77,8 @@ Node 可以包含多个 pod，pod 可以包含多个容器，容器可以包含�
 
 Service 是 Kubernetes 中的抽象概念，它定义了一组 Pod 的访问策略。Service 可以通过 Label Selector 来定义一组 Pod。Service 可以通过 ClusterIP、NodePort、LoadBalancer 暴露给外部。
 
-![](http://jn-image-bed-cdn.jqknono.com/md_imgs/202302011232880.svg+xml)
+![](https://jn-image-bed-ori.jqknono.com/md_imgs/202302011232880.svg+xml)
 
 ## 使用 label 和 selector 识别
 
-![](http://jn-image-bed-cdn.jqknono.com/md_imgs/202302011427249.svg+xml)
+![](https://jn-image-bed-ori.jqknono.com/md_imgs/202302011427249.svg+xml)

@@ -63,7 +63,7 @@ flannel 是一个比较简单的网络插件，它的实现原理是在每个节
 
 ### flannel
 
-![](http://jn-image-bed-cdn.jqknono.com/md_imgs/202302011801436.png)
+![picture 1](https://s2.loli.net/2023/05/06/xOaTZqyr6kEfLpU.png)  
 
 参考:
 

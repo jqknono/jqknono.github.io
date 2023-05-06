@@ -56,9 +56,9 @@ tags: 集群, k8s
 
 - 除了 Docker 以外, Kubernetes 支持很多其它容器运行时, 但 Docker 是最有名的.
 
-![k8s架构](http://jn-image-bed-cdn.jqknono.com/md_imgs/20230111142431.png)
+![picture 1](https://s2.loli.net/2023/05/06/5GHliN4JCUKPk2F.png)  
 
-![](http://jn-image-bed-cdn.jqknono.com/md_imgs/202302011815190.svg+xml)
+![](https://jn-image-bed-ori.jqknono.com/md_imgs/202302011815190.svg+xml)
 
 ### Pod
 
@@ -353,7 +353,7 @@ Kubernetes 集群的 IPv4/IPv6 双协议栈可提供下面的功能：
 
 ### Ingress
 
-![Ingress](http://jn-image-bed-cdn.jqknono.com/md_imgs/202302011825437.svg+xml)
+![Ingress](https://jn-image-bed-ori.jqknono.com/md_imgs/202302011825437.svg+xml)
 
 - Ingress 公开从集群外部到集群内服务的 HTTP 和 HTTPS 路由。 流量路由由 Ingress 资源上定义的规则控制。
 - Ingress 是对集群中服务的外部访问进行管理的 API 对象，典型的访问方式是 HTTP。
@@ -448,8 +448,6 @@ kube-proxy [flags]
 ```
 
 ### 虚拟 IP 和服务代理
-
-![picture 5](http://jn-image-bed-cdn.jqknono.com/k8s%E5%AD%A6%E4%B9%A0_789018346e5bdad4fb9af030a2923f31e240efec4172b19a249a28172456a570.png)
 
 Kubernetes 集群中的每个[节点](https://kubernetes.io/zh-cn/docs/concepts/architecture/nodes/)会运行一个  [kube-proxy](https://kubernetes.io/zh-cn/docs/reference/command-line-tools-reference/kube-proxy/) （除非你已经部署了自己的替换组件来替代  `kube-proxy`）。
 
