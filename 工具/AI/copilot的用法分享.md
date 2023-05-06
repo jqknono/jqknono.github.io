@@ -1,13 +1,32 @@
-# Copilot 的用法分享
+---
+layout: page
+title: copilot的用法分享
+published: true
+categories: 评测
+tags: 评测, AI
+date: 2023-05-06 16:14:26
+---
+
+[视频分享](https://qingteng.feishu.cn/minutes/obcnj9f86gvr3o863mb88p99)
+
+<!-- TOC tocDepth:2..3 chapterDepth:2..6 -->
 
 - [Copilot Labs 能力](#copilot-labs-能力)
 - [Copilot 是什么](#copilot-是什么)
-- [使用 Custom 扩展 Copilot 边界](#使用-Custom-扩展-Copilot-边界)
+- [理解](#理解)
+- [建议](#建议)
+- [调试](#调试)
+- [检视](#检视)
+- [重构](#重构)
+- [文档](#文档)
+- [使用 Custom 扩展 Copilot 边界](#使用-custom-扩展-copilot-边界)
 - [获得更专业的建议](#获得更专业的建议)
 - [纯文本的建议](#纯文本的建议)
 - [设置项](#设置项)
 - [数据安全](#数据安全)
 - [常见问题](#常见问题)
+
+<!-- /TOC -->
 
 CoPilot 是一款基于机器学习的代码补全工具，它可以帮助你快速编写代码，提高编码效率。
 
@@ -143,10 +162,10 @@ Copilot Labs 预置了以下功能:
 - `增加乘除的能力`  
   ![picture 18](https://s2.loli.net/2023/05/06/W32hnFydZvkPltc.png)
 
-- `改写为go`
+- `改写为go`  
   ![picture 19](https://s2.loli.net/2023/05/06/9p1yRdjJacEOBDx.png)
 
-- `添加三角函数计算`
+- `添加三角函数计算`  
   ![picture 20](https://s2.loli.net/2023/05/06/QX6zJDxjhnvKwmL.png)
 
 - `添加微分计算`, 中文这里不好用了, 使用 `support calculate differential`, 在低温模式时, 没有靠谱答案, 高温模式时, 有几个离谱答案.
