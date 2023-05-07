@@ -30,3 +30,44 @@ date: 2023-05-06 11:47:48
 - [请问 windows 多网卡卡如何实现交换机功能](https://www.chiphell.com/forum.php?mod=viewthread&tid=2458976&extra=page%3D1&mobile=no)
 
 ![picture 2](https://s2.loli.net/2023/05/06/y7mtlGhBWjA82Es.png)
+
+一份标准可联网的配置如下:
+
+```bat
+PS C:\Users\jqkno> netsh interface ipv6 show interface "wi-fi"
+
+Interface Wi-Fi Parameters
+----------------------------------------------
+IfLuid                             : wireless_32768
+IfIndex                            : 24
+State                              : connected
+Metric                             : 45
+Link MTU                           : 1480 bytes
+Reachable Time                     : 29000 ms
+Base Reachable Time                : 30000 ms
+Retransmission Interval            : 1000 ms
+DAD Transmits                      : 1
+Site Prefix Length                 : 64
+Site Id                            : 1
+Forwarding                         : disabled
+Advertising                        : disabled
+Neighbor Discovery                 : enabled
+Neighbor Unreachability Detection  : enabled
+Router Discovery                   : enabled
+Managed Address Configuration      : enabled
+Other Stateful Configuration       : enabled
+Weak Host Sends                    : disabled
+Weak Host Receives                 : disabled
+Use Automatic Metric               : enabled
+Ignore Default Routes              : disabled
+Advertised Router Lifetime         : 1800 seconds
+Advertise Default Route            : disabled
+Current Hop Limit                  : 64
+Force ARPND Wake up patterns       : disabled
+Directed MAC Wake up patterns      : disabled
+ECN capability                     : application
+RA Based DNS Config (RFC 6106)     : enabled
+DHCP/Static IP coexistence         : enabled
+```
+
+修改设置方法: `netsh interface ipv6 set interface "Network Bridge" managedaddress=enabled`
