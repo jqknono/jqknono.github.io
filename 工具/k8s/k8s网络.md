@@ -58,8 +58,6 @@ tags: 集群, k8s
 
 ![picture 1](https://s2.loli.net/2023/05/06/5GHliN4JCUKPk2F.png)  
 
-![](https://jn-image-bed-ori.jqknono.com/md_imgs/202302011815190.svg+xml)
-
 ### Pod
 
 - Pod 是可以在 Kubernetes 中创建和管理的、最小的可部署的计算单元.
@@ -352,8 +350,6 @@ Kubernetes 集群的 IPv4/IPv6 双协议栈可提供下面的功能：
 - kube-proxy 基于 spec.internalTrafficPolicy 的设置来过滤路由的目标服务端点。 当它的值设为 Local 时，只会选择节点本地的服务端点。 当它的值设为 Cluster 或缺省时，Kubernetes 会选择所有的服务端点。
 
 ### Ingress
-
-![Ingress](https://jn-image-bed-ori.jqknono.com/md_imgs/202302011825437.svg+xml)
 
 - Ingress 公开从集群外部到集群内服务的 HTTP 和 HTTPS 路由。 流量路由由 Ingress 资源上定义的规则控制。
 - Ingress 是对集群中服务的外部访问进行管理的 API 对象，典型的访问方式是 HTTP。

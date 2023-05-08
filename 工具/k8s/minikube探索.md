@@ -6,10 +6,6 @@
 
 ```bash
 minikube start -p minikube --nodes 3 --cni calico --kubernetes-version v1.26.3 --driver=docker --vm --addons ingress-dns --addons ingress --addons metrics-server --addons dashboard
-kubectl create namespace hivesec
-kubectl apply -f ./cluster-link-yaml/hivesec_rbac.yaml
-kubectl apply -f ./cluster-link-yaml/cluster-link.yaml
-kubectl apply -f ./hiveagent-yaml/hiveagent_daemonset.yaml
 ```
 
 ## 前期准备

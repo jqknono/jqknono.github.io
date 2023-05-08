@@ -86,8 +86,6 @@ kubectl -n kubernetes-dashboard create token admin-user
 
 ## iptables
 
-![](https://jn-image-bed-ori.jqknono.com/md_imgs/202302021740093.svg+xml)
-
 ```shell
 # will reset iptables
 iptables -F && iptables -t nat -F && iptables -t mangle -F && iptables -X
