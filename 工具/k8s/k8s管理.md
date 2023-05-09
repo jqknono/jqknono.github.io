@@ -78,7 +78,7 @@ https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/cre
 # 部署Dashboard
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 kubectl create serviceaccount admin-user -n kubernetes-dashboard
-kubectl create clusterrolebinding dashboard-admin -n kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=admin-user
+kubectl create clusterrolebinding dashboard-admin --clusterrole=cluster-admin --serviceaccount=kubernetes-dashboard:admin-user
 kubectl -n kubernetes-dashboard create token admin-user
 # 第二种方法, token不过期 https://www.cnblogs.com/ll409546297/p/16739351.html
 # kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep dashboard-admin | awk '{print $1}')
