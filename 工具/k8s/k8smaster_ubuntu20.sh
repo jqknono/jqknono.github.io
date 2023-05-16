@@ -40,12 +40,12 @@ function clear_containerd() {
 }
 
 function uninstall_containerd() {
-    apt remove -y containerd.io
+    apt remove -y containerd
     rm -rf /etc/containerd
 }
 
 function install_containerd() {
-    apt install -y containerd.io
+    apt install -y containerd
     systemctl stop containerd
     wget -O containerd.tar.gz https://github.com/containerd/containerd/releases/download/v$containerd_ver/containerd-$containerd_ver-linux-amd64.tar.gz
     tar xvf containerd.tar.gz
