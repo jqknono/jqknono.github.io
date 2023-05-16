@@ -15,11 +15,6 @@
 
 ## 系统配置
 
-```batch
-rem 关掉 Windows Search
-sc stop "wsearch" && sc config "wsearch" start=disabled
-```
-
 ```ps1
 # 使能 ps 脚本运行
 Set-ExecutionPolicy RemoteSigned
@@ -153,7 +148,7 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPo
 # ide
 winget install --id Git.Git
 winget install --id Microsoft.VisualStudioCode
-winget install --id Microsoft.VisualStudio.2022.Community
+winget install --id Microsoft.VisualStudio.2022.Professional
 winget install --id Microsoft.VisualStudio.2019.BuildTools
 # tool
 winget install --id Microsoft.WindowsTerminal
@@ -169,19 +164,15 @@ winget install --id vim.vim
 winget install --id Docker.DockerDesktop
 winget install --id WiresharkFoundation.Wireshark
 winget install --id Kitware.CMake
-winget install --id Postman.Postman
 winget install --id Google.Chrome
-winget install --id AOMEI.PartitionAssistant
 winget install --id DBBrowserForSQLite.DBBrowserForSQLite
-winget install "WindDbg Preview"
+winget install --id Canonical.Ubuntu.2204
 # lang
-winget install --id Python.Python.3
+winget install --id Python.Python.3.11
 winget install --id OpenJS.NodeJS.LTS
 winget install --id GoLang.Go
 winget install --id Microsoft.ASPNetCore.6-x64
-winget install --id Microsoft.dotnet
-winget install --id Microsoft.OpenJDK.17
-winget install --id Microsoft.dotNetFramework
+winget install --id Microsoft.DotNet.SDK.7
 ```
 
 ## 可选应用
@@ -192,7 +183,11 @@ winget install --id Oracle.MySQL
 winget install --id Microsoft.SQLServer.2019.Express
 winget install --id Tencent.wechat-devtool
 winget install --id Google.AndroidStudio
+winget install --id Postman.Postman
+winget install --id Microsoft.OpenJDK.17
 # tool
+winget install --id Microsoft.WinDbg
+winget install --id AOMEI.PartitionAssistant
 winget install --id Cppcheck.Cppcheck
 winget install --id Hiresolution.X-MouseButtonControl
 winget install --id Tencent.WeChat
@@ -214,6 +209,7 @@ winget install --id VMware.WorkstationPro
 winget install --id Figma.Figma
 winget install --id TimKosse.FileZilla.Client
 winget install --id TimKosse.FileZilla.Server
+winget install --id Valve.Steam
 ```
 
 ## 配置计划任务
@@ -246,4 +242,14 @@ $remotePowershell = "powershell Add-Content -Force -Path $env:ProgramData\ssh\ad
 
 # Connect to your server and run the PowerShell using the $remotePowerShell variable
 ssh jqknono@homecenter $remotePowershell
+```
+
+## 疑难杂症
+
+```ps1
+# ipv6不更新
+# delete registry HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6
+Remove-Item -Path "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6" -Force
+# delete reg HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP6TUNNEL
+Remove-Item -Path "HKLM:\SYSTEM\CurrentControlSet\Services\TCPIP6TUNNEL" -Force
 ```
