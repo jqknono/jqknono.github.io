@@ -252,4 +252,7 @@ ssh jqknono@homecenter $remotePowershell
 Remove-Item -Path "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6" -Force
 # delete reg HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP6TUNNEL
 Remove-Item -Path "HKLM:\SYSTEM\CurrentControlSet\Services\TCPIP6TUNNEL" -Force
+
+# running scripts is disabled on this system
+Set-ExecutionPolicy RemoteSigned
 ```
