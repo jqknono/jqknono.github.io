@@ -266,4 +266,6 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 
 echo -e "\033[32m DONE! \033[0m"
 echo -e "\033[32mRun\033[33m kubeadm token create --print-join-command \033[32mto get join command \033[0m"
+echo -e "\033[36m kubectl apply -f {file} 无法创建镜像时, 使用以下命令应用阿里云镜像 \033[0m"
+echo -e "\033[32msed -i 's/registry.k8s.io/registry.aliyuncs.com\/google_containers/g' apply.toml \033[0m"
 source ~/.bashrc
