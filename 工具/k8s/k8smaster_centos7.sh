@@ -7,6 +7,12 @@ export releasever=$(cat /etc/redhat-release | grep -oE '[0-9]+\.[0-9]+' | cut -d
 function set_third_repo() {
     curl -s https://mirrors.aliyun.com/repo/Centos-7.repo -o /etc/yum.repos.d/CentOS-Base.repo
 
+    # usibg tsinghua repo
+    sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+        -e 's|http://mirrors.aliyun.com/centos|https://mirrors.tuna.tsinghua.edu.cn/centos|g' \
+        -i.bak \
+        /etc/yum.repos.d/CentOS-*.repo
+
     cat >/etc/yum.repos.d/kubernetes.repo <<EOF
 [kubernetes]
 name=Kubernetes
@@ -43,6 +49,7 @@ function install_containerd() {
     cp bin/* /usr/local/bin/
     mkdir -p /etc/containerd
     containerd config default >/etc/containerd/config.toml
+    # fuser -k /usr/local/bin/containerd-shim-runc-v2
 
     systemctl daemon-reload
     systemctl restart containerd
@@ -55,6 +62,8 @@ function reset_kubeadm() {
     rm -rf /etc/cni/net.d/*
     rm -rf /var/lib/kubelet/*
     rm -rf /etc/kubernetes/*
+    rm -rf /var/lib/kubelet
+    rm -rf /var/lib/cni/
 }
 
 function reset_iptables() {
@@ -99,6 +108,7 @@ EOF
     mkdir -p /etc/containerd
     containerd config default >/etc/containerd/config.toml
     # replace sandbox_image = "registry.k8s.io" with sandbox_image = "registry.aliyuncs.com/google_containers"
+    # sed -i 's/registry.k8s.io/registry.qingteng.cn\/registry.k8s.io/g' /etc/containerd/config.toml
     sed -i 's/registry.k8s.io/registry.aliyuncs.com\/google_containers/g' /etc/containerd/config.toml
 
     # config firewall
@@ -106,7 +116,7 @@ EOF
     systemctl disable firewalld
 
     # config hostname random
-    hostnamectl set-hostname $(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 8 | head -n 1)
+    # hostnamectl set-hostname $(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 8 | head -n 1)
 
     # config system
     systemctl enable containerd
@@ -191,7 +201,7 @@ function main() {
 
 # check root
 if [ $(id -u) -ne 0 ]; then
-    echo "Please run as root"
+    echo -e "\033[31mPlease run as root\033[0m"
     exit 1
 fi
 
@@ -208,7 +218,7 @@ if [ $# -ne 2 ]; then
 fi
 
 # https://kubernetes.io/releases/
-ver_list=(1.24.0 1.24.1 1.24.2 1.24.3 1.24.4 1.24.5 1.24.6 1.24.7 1.24.8 1.24.9 1.24.10 1.24.11 1.24.12 1.24.13 1.25.0 1.25.1 1.25.2 1.25.3 1.25.4 1.25.5 1.25.6 1.25.7 1.25.8 1.25.9 1.26.0 1.26.1 1.26.2 1.26.3 1.26.4 1.27.0 1.27.1)
+ver_list=(1.24.0 1.24.1 1.24.2 1.24.3 1.24.4 1.24.5 1.24.6 1.24.7 1.24.8 1.24.9 1.24.10 1.24.11 1.24.12 1.24.13 1.25.0 1.25.1 1.25.2 1.25.3 1.25.4 1.25.5 1.25.6 1.25.7 1.25.8 1.25.9 1.26.0 1.26.1 1.26.2 1.26.3 1.26.4 1.27.0 1.27.1 1.27.2)
 # exit if version not in list
 if [[ ! " ${ver_list[@]} " =~ " $1 " ]]; then
     echo -e "\033[31m[ERROR]k8s_version not in support list\033[0m"
@@ -240,9 +250,15 @@ echo -e "Is master node: \033[32m$is_master\033[0m"
 
 main
 
+echo -e "\033[32m Install Kubernetes initial end. \033[0m"
+
 if [ $is_master == true ]; then
     kubeadm reset -f
+    # kubeadm init --pod-network-cidr=192.168.0.0/16 --image-repository registry.qingteng.cn/registry.k8s.io
     kubeadm init --pod-network-cidr=192.168.0.0/16 --image-repository registry.aliyuncs.com/google_containers
+    mkdir -p $HOME/.kube
+    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+    sudo chown $(id -u):$(id -g) $HOME/.kube/config
     echo -e "\033[32m Run \033[33mkubeadm join\033[32m command on worker node \033[0m"
 fi
 

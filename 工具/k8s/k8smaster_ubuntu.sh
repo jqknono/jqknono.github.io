@@ -5,21 +5,23 @@ export basearch=$(uname -m)
 export releasever=$(cat /etc/redhat-release | grep -oE '[0-9]+\.[0-9]+' | cut -d. -f1)
 
 function set_third_repo() {
+    codename=$(lsb_release -c | awk '{print $2}')
+
     cat >/etc/apt/sources.list <<EOF
-    deb https://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
-    deb-src https://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+    deb https://mirrors.aliyun.com/ubuntu/ $codename main restricted universe multiverse
+    deb-src https://mirrors.aliyun.com/ubuntu/ $codename main restricted universe multiverse
 
-    deb https://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
-    deb-src https://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+    deb https://mirrors.aliyun.com/ubuntu/ $codename-security main restricted universe multiverse
+    deb-src https://mirrors.aliyun.com/ubuntu/ $codename-security main restricted universe multiverse
 
-    deb https://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
-    deb-src https://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+    deb https://mirrors.aliyun.com/ubuntu/ $codename-updates main restricted universe multiverse
+    deb-src https://mirrors.aliyun.com/ubuntu/$codename-updates main restricted universe multiverse
     
-    deb https://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
-    deb-src https://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+    deb https://mirrors.aliyun.com/ubuntu/ $codename-proposed main restricted universe multiverse
+    deb-src https://mirrors.aliyun.com/ubuntu/ $codename-proposed main restricted universe multiverse
 
-    deb https://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
-    deb-src https://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+    deb https://mirrors.aliyun.com/ubuntu/ $codename-backports main restricted universe multiverse
+    deb-src https://mirrors.aliyun.com/ubuntu/ $codename-backports main restricted universe multiverse
 EOF
 
     curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | apt-key add -
@@ -177,7 +179,7 @@ if [ $# -ne 2 ]; then
 fi
 
 # https://kubernetes.io/releases/
-ver_list=(1.24.0 1.24.1 1.24.2 1.24.3 1.24.4 1.24.5 1.24.6 1.24.7 1.24.8 1.24.9 1.24.10 1.24.11 1.24.12 1.24.13 1.25.0 1.25.1 1.25.2 1.25.3 1.25.4 1.25.5 1.25.6 1.25.7 1.25.8 1.25.9 1.26.0 1.26.1 1.26.2 1.26.3 1.26.4 1.27.0 1.27.1)
+ver_list=(1.24.0 1.24.1 1.24.2 1.24.3 1.24.4 1.24.5 1.24.6 1.24.7 1.24.8 1.24.9 1.24.10 1.24.11 1.24.12 1.24.13 1.25.0 1.25.1 1.25.2 1.25.3 1.25.4 1.25.5 1.25.6 1.25.7 1.25.8 1.25.9 1.26.0 1.26.1 1.26.2 1.26.3 1.26.4 1.27.0 1.27.1 1.27.2)
 # exit if version not in list
 if [[ ! " ${ver_list[@]} " =~ " $1 " ]]; then
     echo -e "\033[31m[ERROR]k8s_version not in support list\033[0m"
@@ -208,6 +210,8 @@ echo -e "Using k8s \033[32m$k8s_version\033[0m"
 echo -e "Is master node: \033[32m$is_master\033[0m"
 
 main
+
+echo -e "\033[32m Install Kubernetes initial end. \033[0m"
 
 if [ $is_master == true ]; then
     kubeadm reset -f
