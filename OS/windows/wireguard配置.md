@@ -13,7 +13,6 @@ Set-NetIPInterface -ifindex <interface index> -Forwarding Enabled
 New-NetFirewallRule -DisplayName "@wg1" -Direction Inbound  -RemoteAddress 10.66.66.1/24 -Action Allow
 New-NetFirewallRule -DisplayName "@wg1" -Direction Outbound -RemoteAddress 10.66.66.1/24 -Action Allow
 ```
-Set-NetIPInterface -ifindex 39 -Forwarding Enabled
 
 ```powershell
 # 定位拦截原因
