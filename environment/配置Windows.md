@@ -1,17 +1,17 @@
 # Windows
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- TOC tocDepth:2..3 chapterDepth:2..6 -->
 
-<!-- code_chunk_output -->
+- [系统配置](#系统配置)
+- [建议的应用](#建议的应用)
+- [可选应用](#可选应用)
+- [配置计划任务](#配置计划任务)
+- [工具配置](#工具配置)
+- [Windows远程ssh登录](#windows远程ssh登录)
+- [疑难杂症](#疑难杂症)
+- [第三方工具](#第三方工具)
 
-- [Windows](#windows)
-  - [系统配置](#系统配置)
-  - [建议的应用](#建议的应用)
-  - [可选应用](#可选应用)
-  - [配置计划任务](#配置计划任务)
-  - [工具配置](#工具配置)
-
-<!-- /code_chunk_output -->
+<!-- /TOC -->
 
 ## 系统配置
 
@@ -255,4 +255,11 @@ Remove-Item -Path "HKLM:\SYSTEM\CurrentControlSet\Services\TCPIP6TUNNEL" -Force
 
 # running scripts is disabled on this system
 Set-ExecutionPolicy RemoteSigned
+```
+
+## 第三方工具
+
+```ps1
+# https://github.com/ChrisTitusTech/winutil
+irm christitus.com/win | iex
 ```
