@@ -15,10 +15,10 @@ namespace ConsoleApp1
             {
                 List<Task> tasks = new List<Task>();
 
-                tasks.Add(Task.Run(Noraml_Action));
-                tasks.Add(Task.Run(Noraml_Task));
-                tasks.Add(Task.Run(Noraml_Func));
-                tasks.Add(Task.Run(Noraml_Task_Return));
+                tasks.Add(Task.Run(Normal_Action));
+                tasks.Add(Task.Run(Normal_Task));
+                tasks.Add(Task.Run(Normal_Func));
+                tasks.Add(Task.Run(Normal_Task_Return));
                 tasks.Add(Task.Run(Async_Void_Action_No_Await));
                 tasks.Add(Task.Run(Async_Void_Action_With_Await_Exception));
                 tasks.Add(Task.Run(Async_Task_With_Await_Exception));
@@ -37,7 +37,7 @@ namespace ConsoleApp1
             Console.ReadLine();
         }
 
-        static void Noraml_Action()
+        static void Normal_Action()
         {
             int i = 10;
             while (i-- > 0)
@@ -47,7 +47,7 @@ namespace ConsoleApp1
             }
         }
 
-        static Task Noraml_Task()
+        static Task Normal_Task()
         {
             int i = 10;
             while (i-- > 0)
@@ -59,7 +59,7 @@ namespace ConsoleApp1
             return Task.CompletedTask;
         }
 
-        static int Noraml_Func()
+        static int Normal_Func()
         {
             int i = 10;
             while (i-- > 0)
@@ -71,7 +71,7 @@ namespace ConsoleApp1
             return i;
         }
 
-        static Task<int> Noraml_Task_Return()
+        static Task<int> Normal_Task_Return()
         {
             int i = 10;
             while (i-- > 0)
@@ -96,7 +96,7 @@ namespace ConsoleApp1
         }
 
         /// <summary>
-        /// 该异常会导致未处理的异常, 程序退出, finnally不会执行!
+        /// 该异常会导致未处理的异常, 程序退出, finally不会执行!
         /// </summary>
         /// <exception cref="Exception"></exception>
         static async void Async_Void_Action_With_Await_Exception()
@@ -107,7 +107,7 @@ namespace ConsoleApp1
                 Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}]:{i}");
                 await Task.Delay(TimeSpan.FromSeconds(1));
             }
-            //throw new Exception($"Exception from [{MethodBase.GetCurrentMethod().Name}]");
+            throw new Exception($"Exception from [{MethodBase.GetCurrentMethod().Name}]");
         }
 
         /// <summary>

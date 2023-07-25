@@ -14,5 +14,8 @@
     "prettier.singleQuote": false,
     "foam.dateSnippets.afterCompletion": "createNote",
     "foam.files.newNotePath": "currentDir",
-    "foam.logging.level": "info"
+    "foam.logging.level": "info",
+    "cSpell.words": [
+        "windbg"
+    ]
 }
