@@ -1,6 +1,6 @@
 ---
 layout: page
-title: cards
+title: 记忆卡片
 published: false
 categories: 索引
 tags: 索引, cards
