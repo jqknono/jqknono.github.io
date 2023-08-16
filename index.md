@@ -13,9 +13,10 @@ title: jqknono的探索空间
 - [[blog]]
 - [[网络安全]]
 - [[网络]]
-- 工具
-  - [[docker]]
-  - [[Kubernetes]]
+- [[工具]]
+  - [[运维工具]]
+    - [[docker]]
+    - [[Kubernetes]]
 - [[AI]]
 - [[问题定位方法]]
 - [[配置开发环境]]
@@ -33,6 +34,8 @@ title: jqknono的探索空间
 [blog]: blog/blog.md "博客"
 [网络安全]: 安全/网络安全.md "网络"
 [网络]: 网络/网络.md "网络"
+[工具]: 工具/工具.md "工具"
+[运维工具]: 工具/运维工具.md "运维工具"
 [docker]: 工具/docker/docker.md "k8s和docker"
 [Kubernetes]: 工具/k8s/Kubernetes.md "kubernetes"
 [AI]: 工具/AI/AI.md "AI"

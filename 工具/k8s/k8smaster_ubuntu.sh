@@ -1,9 +1,6 @@
 set -euxo pipefail
 set +x
 
-export basearch=$(uname -m)
-export releasever=$(cat /etc/redhat-release | grep -oE '[0-9]+\.[0-9]+' | cut -d. -f1)
-
 function set_third_repo() {
     codename=$(lsb_release -c | awk '{print $2}')
 
@@ -15,7 +12,7 @@ function set_third_repo() {
     deb-src https://mirrors.aliyun.com/ubuntu/ $codename-security main restricted universe multiverse
 
     deb https://mirrors.aliyun.com/ubuntu/ $codename-updates main restricted universe multiverse
-    deb-src https://mirrors.aliyun.com/ubuntu/$codename-updates main restricted universe multiverse
+    deb-src https://mirrors.aliyun.com/ubuntu/ $codename-updates main restricted universe multiverse
     
     deb https://mirrors.aliyun.com/ubuntu/ $codename-proposed main restricted universe multiverse
     deb-src https://mirrors.aliyun.com/ubuntu/ $codename-proposed main restricted universe multiverse
@@ -28,8 +25,6 @@ EOF
     cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
 deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
 EOF
-
-    apt update -y
 }
 
 function install_prequisite() {
@@ -108,7 +103,9 @@ EOF
     mkdir -p /etc/containerd
     containerd config default >/etc/containerd/config.toml
     # replace sandbox_image = "registry.k8s.io" with sandbox_image = "registry.aliyuncs.com/google_containers"
-    sed -i 's/registry.k8s.io/registry.aliyuncs.com\/google_containers/g' /etc/containerd/config.toml
+    if [ $use_aliyun == true ]; then
+        sed -i 's/registry.k8s.io/registry.aliyuncs.com\/google_containers/g' /etc/containerd/config.toml
+    fi
 
     # config firewall
     ufw disable
@@ -147,7 +144,10 @@ function config_env() {
 }
 
 function main() {
-    set_third_repo
+    if [ $use_aliyun == true] ; then
+        set_third_repo
+    fi
+    apt update -y
     install_prequisite
     uninstall_containerd
     clear_containerd
@@ -167,13 +167,16 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 # check SELinux
-if [ $(getenforce) != "Disabled" ]; then
-    echo -e "\033[31m[ERROR]Please disable SELinux with 'setenforce 0' and reboot\033[0m"
-    exit 1
+# check if getenforce command exists
+if command -v getenforce >/dev/null 2>&1; then
+    if [ $(getenforce) != "Disabled" ]; then
+        echo -e "\033[31m[ERROR]Please disable SELinux with 'setenforce 0' and reboot\033[0m"
+        exit 1
+    fi
 fi
 
 # check args length:2
-if [ $# -ne 2 ]; then
+if [ $# -lt 2 ]; then
     echo -e "\033[33mUsage\033[0m: \033[31m$0\033[0m \033[32m<k8s_version> [master | worker]\033[0m"
     exit 1
 fi
@@ -205,6 +208,14 @@ else
     export is_master=false
 fi
 
+# use aliyun if -aliyun in args
+if [[ $* =~ "-aliyun" ]]; then
+    export use_aliyun=true
+else
+    export use_aliyun=false
+fi
+
+
 echo -e "Using containerd \033[32m$containerd_ver\033[0m"
 echo -e "Using k8s \033[32m$k8s_version\033[0m"
 echo -e "Is master node: \033[32m$is_master\033[0m"
@@ -215,13 +226,18 @@ echo -e "\033[32m Install Kubernetes initial end. \033[0m"
 
 if [ $is_master == true ]; then
     kubeadm reset -f
-    kubeadm init --pod-network-cidr=192.168.0.0/16 --image-repository registry.aliyuncs.com/google_containers
+    if [ $use_aliyun == true ]; then
+        kubeadm init --pod-network-cidr=192.168.0.0/16 --image-repository registry.aliyuncs.com/google_containers
+    else
+        kubeadm init --pod-network-cidr=192.168.0.0/16
+    fi
     echo -e "\033[32m Run \033[33mkubeadm join\033[32m command on worker node \033[0m"
 fi
 
 export KUBECONFIG=/etc/kubernetes/admin.conf
 
 echo -e "\033[32m DONE! \033[0m"
+echo -e "\033[32m export KUBECONFIG=/etc/kubernetes/admin.conf \033[0m"
 echo -e "\033[32mRun\033[33m kubeadm token create --print-join-command \033[32mto get join command \033[0m"
 echo -e "\033[36m kubectl apply -f {file} 无法创建镜像时, 使用以下命令应用阿里云镜像 \033[0m"
 echo -e "\033[32msed -i 's/registry.k8s.io/registry.aliyuncs.com\/google_containers/g' apply.toml \033[0m"

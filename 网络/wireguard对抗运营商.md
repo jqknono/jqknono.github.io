@@ -2,7 +2,7 @@
 
 wireguard 是一个配置极其简单, 速度很快的 VPN 工具. 但是由于其基于 UDP 通信, 在运营商处会有一些限制, 本文介绍几种解决方案.
 
-运营商限制 UDP 无非通过五元组, 其中 IP 我们不可改变, 因而只能从协议和端口入手.
+运营商对 UDP 封锁/限速(UDP QoS)无非通过五元组, 其中 IP 我们不可改变, 因而只能从协议和端口入手.
 
 `WireGuard over TCP`方案需要服务端和客户端配合都使用 TCP, 其原理很简单, 就是在客户端和服务端各自本地增加 UDP 转 TCP 的中间件, 通过 TCP 转发 UDP 包, 从而绕过运营商的限制.
 这种方案简单易理解, 但是会带来配置上的繁琐, 以及性能上的损失. 因此本文只简单介绍此方案, 主要介绍的是端口规避的方案.
@@ -57,8 +57,8 @@ sudo systemctl enable wg-quick@wg0
 手动点击安装, wireguard 的安全程序做的事情很少, 我们自行配置防火墙:
 
 ```ps1
-New-NetFirewallRule -DisplayName "@wg1" -Direction Inbound  -RemoteAddress 10.66.66.1/24 -Action Allow
-New-NetFirewallRule -DisplayName "@wg1" -Direction Outbound -RemoteAddress 10.66.66.1/24 -Action Allow
+New-NetFirewallRule -DisplayName "@wg0" -Direction Inbound  -RemoteAddress 10.66.66.1/24 -Action Allow
+New-NetFirewallRule -DisplayName "@wg0" -Direction Outbound -RemoteAddress 10.66.66.1/24 -Action Allow
 ```
 
 ## WireGuard over TCP

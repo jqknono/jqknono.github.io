@@ -167,6 +167,7 @@ winget install --id Kitware.CMake
 winget install --id Google.Chrome
 winget install --id DBBrowserForSQLite.DBBrowserForSQLite
 winget install --id Canonical.Ubuntu.2204
+winget install --id Insecure.Nmap
 # lang
 winget install --id Python.Python.3.11
 winget install --id OpenJS.NodeJS.LTS

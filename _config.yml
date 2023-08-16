@@ -55,7 +55,7 @@ minima:
     #   - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=qc6CJjYAAAAJ" }
     - { platform: instagram, user_url: "https://www.instagram.com/jqknono" }
     #   - { platform: keybase,        user_url: "https://keybase.io/jekyll" }
-    - { platform: telegram, user_url: "https://t.me/jqknono" }
+    # - { platform: telegram, user_url: "https://t.me/jqknono" }
     - {
         platform: linkedin,
         user_url: "https://www.linkedin.com/in/%E5%81%B2-%E6%9D%8E-8a938a149/",
@@ -80,4 +80,4 @@ header_pages:
 show_excerpts: true
 disqus:
   shortname: jqknono
-google_analytics: G-3PDTETSZ6X
+google_analytics: G-F3FFTG72NE
