@@ -5,7 +5,7 @@ repository: jqknono/jqknono.github.io
 description: 全栈开发的成长之路
 encoding: utf-8
 author:
-  name: 李偲
+  name: Cecil
   email: "jqknono@outlook.com"
 safe: false
 incremental: false
