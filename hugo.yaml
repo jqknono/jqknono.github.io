@@ -1,0 +1,23 @@
+baseURL: "https://blogs.jqknono.com"
+languageCode: "zh-cn"
+title: jqknono Blogs
+theme: "lotusdocs"
+contentDir: "content"
+params:
+  _merge: none
+  contact:
+    email: jqknono@gmail.com
+    phone: +8613163320069
+  subtitle: Simple Adguard Private Service
+module:
+  replacements: "github.com/colinwilson/lotusdocs -> lotusdocs"
+  imports:
+    - path: "github.com/colinwilson/lotusdocs"
+      disable: false
+    - path: "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+      disable: false
+enableEmoji: true
+sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 0.5

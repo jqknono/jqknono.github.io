@@ -140,3 +140,4 @@ gemfile.lock
 *.gem
 .bundle
 .sass-cache
+.hugo_build.lock
