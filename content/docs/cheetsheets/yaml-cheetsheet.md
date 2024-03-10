@@ -1,3 +1,7 @@
+---
+title: yaml-cheetsheet
+---
+
 # YAML 入门教程
 
 ---

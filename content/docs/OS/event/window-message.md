@@ -1,3 +1,7 @@
+---
+title: window-message
+---
+
 # windows-message
 
 - [All windows messages as C# enum (github.com)](https://gist.github.com/amgine/2395987)

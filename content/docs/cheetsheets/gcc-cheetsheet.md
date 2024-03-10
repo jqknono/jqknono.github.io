@@ -1,3 +1,7 @@
+---
+title: gcc-cheetsheet
+---
+
 # gcc 速查
 
 g++ 等价于 `gcc -xc++ -lstdc++ -shared-libgcc`

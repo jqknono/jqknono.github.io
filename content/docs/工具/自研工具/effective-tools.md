@@ -1,3 +1,7 @@
+---
+title: effective-tools
+---
+
 # 效率工具
 
 - [ahk](https://www.autohotkey.com/): AutoHotKey(AHK) 是一个自动映射快捷键到功能的工具, 其编写有自己的语法.

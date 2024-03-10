@@ -1,3 +1,7 @@
+---
+title: vscode-variable
+---
+
 # vscode-variable
 
 - [ ] vscode-variable

@@ -1,3 +1,7 @@
+---
+title: 理解Windows事件跟踪_ETW
+---
+
 # 理解 ETW
 
 筛除了一些不必要的信息, 完整文档参阅: <https://docs.microsoft.com/en-us/windows/win32/etw/event-tracing-portal>

@@ -1,3 +1,7 @@
+---
+title: minikube探索
+---
+
 # minikube 探索
 
 - 应使用非 root 用户运行 minikube

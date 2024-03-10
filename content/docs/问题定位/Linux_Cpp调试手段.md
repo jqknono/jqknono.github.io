@@ -1,3 +1,7 @@
+---
+title: Linux_Cpp调试手段
+---
+
 # Linux_Cpp 调试手段
 
 ## 工具和用法

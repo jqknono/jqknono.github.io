@@ -1,3 +1,7 @@
+---
+title: Windows
+---
+
 # Windows
 
 - [[Win-to-go]]

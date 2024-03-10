@@ -1,3 +1,7 @@
+---
+title: README_brieftc
+---
+
 # brieftc
 
 一个简洁的定时任务生成器.

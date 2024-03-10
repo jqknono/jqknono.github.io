@@ -1,3 +1,7 @@
+---
+title: k8s架构
+---
+
 # k8s 架构
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->

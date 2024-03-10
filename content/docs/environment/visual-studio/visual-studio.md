@@ -1,3 +1,7 @@
+---
+title: visual-studio
+---
+
 # visual-studio
 
 - [[vs-remote-debug]]

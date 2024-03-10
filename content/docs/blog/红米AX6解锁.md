@@ -1,3 +1,7 @@
+---
+title: 红米AX6解锁
+---
+
 # 红米AX6解锁
 
 - [红米 AX3000 (AX6) 解锁 SSH 教程, 依赖opwrt无线路由器](https://xn--m80a.ml/openwrt/dev/10.html)

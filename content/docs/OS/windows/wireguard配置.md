@@ -1,3 +1,7 @@
+---
+title: wireguard配置
+---
+
 # wireguard 配置
 
 ## 防火墙配置

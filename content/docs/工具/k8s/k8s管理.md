@@ -1,3 +1,7 @@
+---
+title: k8s管理
+---
+
 # k8s 管理
 
 - `-o wide`: more info

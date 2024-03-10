@@ -1,3 +1,7 @@
+---
+title: awesome-lang-series
+---
+
 # Awesome Language
 
 Awesome系列, 提升兴趣, 开阔眼界, 学习靠谱的知识.

@@ -1,4 +1,4 @@
-baseURL: "https://blogs.jqknono.com"
+baseURL: "blog.jqknono.com"
 languageCode: "zh-cn"
 title: jqknono Blogs
 theme: "lotusdocs"

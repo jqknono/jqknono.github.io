@@ -1,3 +1,7 @@
+---
+title: string
+---
+
 # string
 
 谈到字符串, 有两个概念需要区分: 字符(character)与编码(encoding).

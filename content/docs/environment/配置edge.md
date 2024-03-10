@@ -1,3 +1,7 @@
+---
+title: 配置edge
+---
+
 # 配置edge
 
 

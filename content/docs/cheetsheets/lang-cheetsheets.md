@@ -1,3 +1,7 @@
+---
+title: lang-cheetsheets
+---
+
 # 其它工具速查
 
 - [[gcc-cheetsheet]]

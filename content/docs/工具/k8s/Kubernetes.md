@@ -1,3 +1,7 @@
+---
+title: Kubernetes
+---
+
 # kubernetes
 
 - [[k8s介绍]]

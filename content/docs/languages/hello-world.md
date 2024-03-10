@@ -1,3 +1,7 @@
+---
+title: hello-world
+---
+
 # hello-world
 
 为什么"Hello, World"如此著名, 几乎每一个语言的学习总是以"Hello World"开始?

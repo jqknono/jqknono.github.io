@@ -9,6 +9,20 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "hugo server",
+            "type": "shell",
+            "windows": {
+                "command": "hugo server --bind 0.0.0.0 --baseURL blog.jqknono.com --port 34013 -D -v"
+            },
+        },
+        {
+            "label": "hugo build",
+            "type": "shell",
+            "windows": {
+                "command": "hugo --baseURL blog.jqknono.com"
+            },
         }
     ],
     "version": "2.0.0"

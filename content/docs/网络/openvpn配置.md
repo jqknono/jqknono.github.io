@@ -1,3 +1,7 @@
+---
+title: openvpn配置
+---
+
 # openvpn配置
 
 ## 工具脚本

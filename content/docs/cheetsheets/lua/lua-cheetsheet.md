@@ -1,3 +1,7 @@
+---
+title: lua-cheetsheet
+---
+
 # lua document
 
 - [Lua 5.3 参考手册](https://cloudwu.github.io/lua53doc/manual.html)

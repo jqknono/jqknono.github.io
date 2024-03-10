@@ -1,3 +1,7 @@
+---
+title: 配置macOS
+---
+
 # macOS
 
 ## 推荐工具

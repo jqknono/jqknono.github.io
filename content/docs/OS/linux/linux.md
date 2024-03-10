@@ -1,3 +1,7 @@
+---
+title: linux
+---
+
 # linux
 
 - [[ip命令入门]]

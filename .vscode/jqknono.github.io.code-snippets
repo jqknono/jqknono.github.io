@@ -11,7 +11,7 @@
         "prefix": "addtitle1",
         "body": [
             "---",
-            "title: $TM_FILENAME",
+            "title: $TM_FILENAME_BASE",
             "---",
             ""
         ],

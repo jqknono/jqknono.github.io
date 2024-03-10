@@ -1,3 +1,7 @@
+---
+title: 读这就是OKR
+---
+
 # 读[这就是 OKR]
 
 在前公司实践过 3 年 OKR, 恰逢新公司现在也要转向 OKR, 老板推荐了这本书[这就是 OKR](https://yd.qq.com/web/reader/72332cb0716aecb27234506).

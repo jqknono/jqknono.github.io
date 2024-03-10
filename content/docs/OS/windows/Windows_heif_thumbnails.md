@@ -1,3 +1,7 @@
+---
+title: Windows_heif_thumbnails
+---
+
 # OS\windows\Windows_heif_thumbnails.md
 
 - 缩略图: https://github.com/brookmiles/windows-heic-thumbnails

@@ -1,3 +1,7 @@
+---
+title: cheetsheet_go
+---
+
 # cheetsheel_go
 
 ```bash

@@ -1,3 +1,7 @@
+---
+title: cpp_string
+---
+
 # cpp_string
 
 ## 格式化

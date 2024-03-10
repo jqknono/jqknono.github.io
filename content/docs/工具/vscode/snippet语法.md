@@ -1,3 +1,7 @@
+---
+title: snippet语法
+---
+
 # snippet 语法
 
 [Snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets)

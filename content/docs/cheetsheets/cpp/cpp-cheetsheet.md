@@ -1,3 +1,7 @@
+---
+title: cpp-cheetsheet
+---
+
 # cpp-cheetsheet
 
 - [[cpp_string]]

@@ -1,3 +1,7 @@
+---
+title: vs-remote-debug
+---
+
 # remote debug with visual studio
 
 远程调试C++:

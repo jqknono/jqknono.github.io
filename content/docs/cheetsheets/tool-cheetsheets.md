@@ -1,3 +1,7 @@
+---
+title: tool-cheetsheets
+---
+
 # tool-cheetsheets
 
 - [[gcc-cheetsheet]]

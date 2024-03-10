@@ -1,3 +1,7 @@
+---
+title: 配置Linux
+---
+
 # Linux
 
 ## ubuntu

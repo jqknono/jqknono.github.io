@@ -1,3 +1,7 @@
+---
+title: 国产软件notepad--工程分析
+---
+
 # 国产软件 notepad--工程分析
 
 分析基于[notepad--v2.0](https://gitee.com/cxasm/notepad--/commit/c1ae9ac45b8efdf560cc12a5e36e8fb5dcf45660)
