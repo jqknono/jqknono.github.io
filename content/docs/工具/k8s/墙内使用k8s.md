@@ -3,7 +3,9 @@ layout: page
 title: 墙内使用k8s
 published: true
 categories: 运维
-tags: 运维, k8s
+tags: 
+  - 运维
+  - k8s
 date: 2023-05-04 18:58:22
 ---
 

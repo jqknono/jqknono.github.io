@@ -3,7 +3,9 @@ layout: page
 title: copilot的用法分享
 published: true
 categories: 评测
-tags: 评测, AI
+tags: 
+  - 评测
+  - AI
 date: 2023-05-06 16:14:26
 ---
 

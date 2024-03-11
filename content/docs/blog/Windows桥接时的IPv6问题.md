@@ -3,7 +3,9 @@ layout: page
 title: WindowsServer桥接时的IPv6问题
 published: true
 categories: 运维
-tags: 运维, blog
+tags: 
+  - 运维
+  - blog
 date: 2023-05-06 11:47:48
 ---
 

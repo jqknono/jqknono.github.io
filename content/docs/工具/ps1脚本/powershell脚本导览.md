@@ -4,7 +4,9 @@ title: powershell脚本导览
 published:  true
 date: 2023-04-24 10:29:39
 categories:  运维工具
-tags:  运维工具, ps1脚本
+tags: 
+  - 运维工具
+  - ps1脚本
 ---
 
 <!-- TOC tocDepth:2..3 chapterDepth:2..6 -->

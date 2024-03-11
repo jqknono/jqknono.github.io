@@ -3,7 +3,9 @@ layout: page
 title: cheetsheets
 published: true
 categories: 索引
-tags: 索引, cheetsheets
+tags: 
+  - 索引
+  - cheetsheets
 date: 2023-05-10 16:05:33
 ---
 

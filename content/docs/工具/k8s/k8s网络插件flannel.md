@@ -1,13 +1,13 @@
 ---
-layout:  page
+layout: page
 title: k8s网络插件flannel
-published: true  
+published: true
 date: 2023-04-21 14:58:29
 category: 未分类
-tags: 未分类, ${RELATIVE_FILEPATH/.*\([^\]+)\[^\]+/ page/g}
+tags:
+  - 未分类
+  - k8s
 ---
-
-
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
@@ -63,13 +63,13 @@ flannel 是一个比较简单的网络插件，它的实现原理是在每个节
 
 ### flannel
 
-![picture 1](https://s2.loli.net/2023/05/06/xOaTZqyr6kEfLpU.png)  
+![picture 1](https://s2.loli.net/2023/05/06/xOaTZqyr6kEfLpU.png)
 
 参考:
 
 - [扁平网络 Flannel](https://jimmysong.io/kubernetes-handbook/concepts/flannel.html)
 - [强大的 iptables 在 K8s 中的应用剖析](https://jishuin.proginn.com/p/763bfbd2bf02)
-- [Kubernetes网络分析之Flannel](https://developer.aliyun.com/article/713036)
+- [Kubernetes 网络分析之 Flannel](https://developer.aliyun.com/article/713036)
 
 #### ip address(k8s-master)
 

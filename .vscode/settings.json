@@ -8,8 +8,7 @@
     "files.watcherExclude": {
         "**/node_modules": true
     },
-    "foam.edit.linkReferenceDefinitions": "withExtensions",
-    "foam.openDailyNote.directory": "_posts",
+    "foam.openDailyNote.directory": "content/post",
     "foam.openDailyNote.titleFormat": "fullDate",
     "prettier.singleQuote": false,
     "foam.dateSnippets.afterCompletion": "createNote",

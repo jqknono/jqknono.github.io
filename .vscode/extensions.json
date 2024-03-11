@@ -21,6 +21,7 @@
         "github.copilot",
         "yinfei.luahelper",
         "rogalmic.bash-debug",
-        "github.copilot-nightly"
+        "github.copilot-nightly",
+        "gruntfuggly.todo-tree"
     ]
 }

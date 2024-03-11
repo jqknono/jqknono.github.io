@@ -3,7 +3,9 @@ layout: page
 title: 电信IPv6的一些特征
 published: true
 categories: 评测
-tags: 评测, blog
+tags: 
+  - 评测
+  - blog
 date: 2023-05-08 10:45:58
 ---
 

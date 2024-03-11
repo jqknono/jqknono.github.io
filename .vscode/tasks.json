@@ -14,7 +14,7 @@
             "label": "hugo server",
             "type": "shell",
             "windows": {
-                "command": "hugo server --bind 0.0.0.0 --baseURL blog.jqknono.com --port 34013 -D -v"
+                "command": "hugo server --bind 0.0.0.0 --baseURL 10.66.66.3 --port 34013 -D -v"
             },
         },
         {

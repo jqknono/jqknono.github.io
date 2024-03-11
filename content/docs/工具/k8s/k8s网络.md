@@ -4,7 +4,9 @@ title: k8s网络
 published: true
 date: 2023-04-21 18:19:59
 categories: 集群
-tags: 集群, k8s
+tags: 
+  - 集群
+  - k8s
 ---
 
 <!-- TOC tocDepth:2..3 chapterDepth:2..6 -->
