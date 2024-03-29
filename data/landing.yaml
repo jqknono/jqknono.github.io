@@ -2,7 +2,7 @@
 
 # Hero
 hero:
-  enable: true
+  enable: false
   weight: 10
   template: hero
 
@@ -40,6 +40,12 @@ hero:
   cta2Button:
     btnText: "docs"
     url: "/docs"
+  cta3Button:
+    btnText: "pages"
+    url: "/page"
+  cta4Button:
+    btnText: "posts"
+    url: "/post"
 
   info: "**Open Source** MIT Licensed."
 

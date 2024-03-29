@@ -1,4 +1,0 @@
----
-title: Blue-Eyes-Problem
----
-

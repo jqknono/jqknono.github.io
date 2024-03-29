@@ -11,18 +11,19 @@
             }
         },
         {
-            "label": "hugo server",
+            "label": "hugo serve",
             "type": "shell",
             "windows": {
-                "command": "hugo server --bind 0.0.0.0 --baseURL 10.66.66.3 --port 34013 -D -v"
+                "command": "hugo server --bind :: --baseURL r7000.jqknono.com --port 34006 -D -v"
             },
+            "problemMatcher": []
         },
         {
             "label": "hugo build",
             "type": "shell",
             "windows": {
                 "command": "hugo --baseURL blog.jqknono.com"
-            },
+            }
         }
     ],
     "version": "2.0.0"
