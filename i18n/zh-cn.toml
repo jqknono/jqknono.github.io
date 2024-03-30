@@ -1,0 +1,9 @@
+# Feedback
+[feedback_title]
+other = "反馈"
+[feedback_question]
+other = "此页面是否有用？"
+[feedback_positive]
+other = "是"
+[feedback_negative]
+other = "否"

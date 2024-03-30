@@ -14,7 +14,7 @@
             "label": "hugo serve",
             "type": "shell",
             "windows": {
-                "command": "hugo server --bind :: --baseURL r7000.jqknono.com --port 34006 -D -v"
+                "command": "hugo server --bind :: --baseURL http://r7000.jqknono.com --port 34006 --logLevel info --buildDrafts --buildFuture --disableFastRender"
             },
             "problemMatcher": []
         },

@@ -141,3 +141,6 @@ gemfile.lock
 .bundle
 .sass-cache
 .hugo_build.lock
+
+# ignore hugo
+resources/_gen/
