@@ -91,7 +91,7 @@ params:
   version: "v0.1.0"
   url_latest_version: "https://blog.jqknono.com"
   github_repo: https://github.com/jqknono/jqknono.github.io
-  github_subdir: content/zh-cn
+  # github_subdir: content/zh-cn
   github_branch: "main"
   github_project_repo: https://github.com/jqknono/jqknono.github.io
   # gcs_engine_id: "jqknono-blog"
