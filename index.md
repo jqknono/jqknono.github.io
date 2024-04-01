@@ -31,7 +31,7 @@ title: jqknono的探索空间
 [lang-cheetsheets]: content/zh-cn/docs/cheetsheets/lang-cheetsheets.md "lang-cheetsheets"
 [debug-cheatsheet]: content/zh-cn/docs/cheetsheets/debug/debug-cheatsheet.md "debug-cheatsheet"
 [tool-cheetsheets]: content/zh-cn/docs/cheetsheets/tool-cheetsheets.md "tool-cheetsheets"
-[blog]: content/zh-cn/docs/blog/blog.md "blog"
+[blog]: content/zh-cn/blog/blog.md "blog"
 [网络安全]: content/zh-cn/docs/安全/网络安全.md "网络安全"
 [网络]: content/zh-cn/docs/网络/网络.md "网络"
 [工具]: content/zh-cn/docs/工具/工具.md "工具"
