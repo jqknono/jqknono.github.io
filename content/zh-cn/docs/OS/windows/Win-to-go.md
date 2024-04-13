@@ -1,8 +1,7 @@
 ---
-title: Win-to-go
+title: Windows To Go
 ---
 
-# Windows To Go
 ===
 
 Windows To Go 的优点在于移动便携性, 缺点在于经典 Windows系统的数个功能受到限制.

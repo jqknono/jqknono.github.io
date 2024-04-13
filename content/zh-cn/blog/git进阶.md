@@ -2,18 +2,13 @@
 title: git进阶
 ---
 
-# git 进阶
+<!-- TOC tocDepth:2..3 chapterDepth:2..6 -->
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+- [配置覆盖](#配置覆盖)
+  - [基于文件夹的配置](#基于文件夹的配置)
+- [命令行基础](#命令行基础)
 
-<!-- code_chunk_output -->
-
-- [git 进阶](#git-进阶)
-  - [配置覆盖](#配置覆盖)
-    - [基于文件夹的配置](#基于文件夹的配置)
-  - [命令行基础](#命令行基础)
-
-<!-- /code_chunk_output -->
+<!-- /TOC -->
 
 ## 配置覆盖
 

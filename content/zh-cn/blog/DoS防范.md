@@ -4,7 +4,7 @@ title: DoS防范
 
 # DDoS 防范
 
-[DDoS 定义]https://en.wikipedia.org/wiki/Denial-of-service_attack
+[DDoS 定义](https://en.wikipedia.org/wiki/Denial-of-service_attack)
 
 两种 DoS 攻击方式:
 

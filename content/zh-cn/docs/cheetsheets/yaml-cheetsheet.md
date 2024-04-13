@@ -1,5 +1,6 @@
 ---
 title: yaml-cheetsheet
+draft: true
 ---
 
 # YAML 入门教程

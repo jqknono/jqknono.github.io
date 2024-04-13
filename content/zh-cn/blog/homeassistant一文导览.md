@@ -1,5 +1,6 @@
 ---
 title: homeassistant一文导览
+draft: true
 ---
 
 # homeassistant 一文导览

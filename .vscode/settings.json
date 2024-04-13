@@ -16,5 +16,6 @@
     "foam.logging.level": "info",
     "cSpell.words": [
         "windbg"
-    ]
+    ],
+    "foam.edit.linkReferenceDefinitions": "withoutExtensions",
 }

@@ -2,8 +2,6 @@
 title: linux源码中的一些缩写
 ---
 
-# linux 源码中的一些缩写
-
 | 缩写          | 全称                                       |
 | ------------- | ------------------------------------------ |
 | APIC          | Advanced Programmable Interrupt Controller |

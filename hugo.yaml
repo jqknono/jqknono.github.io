@@ -110,9 +110,6 @@ imaging:
 
 module:
   proxy: direct
-  mounts:
-    - source: content/zh-cn
-      target: content
   hugoVersion:
     extended: true
     min: 0.121.1
