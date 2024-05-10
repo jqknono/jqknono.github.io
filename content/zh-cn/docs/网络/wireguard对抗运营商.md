@@ -9,7 +9,7 @@ wireguard 是一个配置极其简单, 速度很快的 VPN 工具. 但是由于�
 运营商对 UDP 封锁/限速(UDP QoS)无非通过五元组, 其中 IP 我们不可改变, 因而只能从协议和端口入手.
 
 `WireGuard over TCP`方案需要服务端和客户端配合都使用 TCP, 其原理很简单, 就是在客户端和服务端各自本地增加 UDP 转 TCP 的中间件, 通过 TCP 转发 UDP 包, 从而绕过运营商的限制.
-这种方案简单易理解, 但是会带来配置上的繁琐, 以及性能上的损失. 因此本文只简单介绍此方案, 主要介绍的是端口规避的方案.
+这种方案简单易理解, 但是会带来配置上的繁琐, 以及性能上的损失. 因此本文只简单介绍此方案, 主要介绍的是**端口规避**的方案.
 
 <!-- TOC tocDepth:2..3 chapterDepth:2..6 -->
 
@@ -67,7 +67,7 @@ New-NetFirewallRule -DisplayName "@wg0" -Direction Outbound -RemoteAddress 10.66
 
 ## WireGuard over TCP
 
-https://gist.github.com/insdavm/90cbeffe76ba4a51251d83af604adf94
+参考: https://gist.github.com/insdavm/90cbeffe76ba4a51251d83af604adf94
 
 ```bash
 sudo apt install udptunnel
@@ -82,9 +82,9 @@ udptunnel -s 8080 127.0.0.1/52630
 
 ```bash
 # 监听多端口
-iptables -t nat -I PREROUTING -i eth0 -p udp -m multiport --dports 51000:52000  -j REDIRECT --to-ports 52630
+iptables -t nat -I PREROUTING -i eth0 -p udp -m multiport --dports 51001:52000  -j REDIRECT --to-ports 51000
 # remove
-iptables -t nat -D PREROUTING -i eth0 -p udp -m multiport --dports 51000:52000  -j REDIRECT --to-ports 52630
+iptables -t nat -D PREROUTING -i eth0 -p udp -m multiport --dports 51001:52000  -j REDIRECT --to-ports 51000
 ```
 
 ## WireGuard Client 定时更换端口

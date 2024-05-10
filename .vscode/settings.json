@@ -14,8 +14,6 @@
     "foam.dateSnippets.afterCompletion": "createNote",
     "foam.files.newNotePath": "currentDir",
     "foam.logging.level": "info",
-    "cSpell.words": [
-        "windbg"
-    ],
     "foam.edit.linkReferenceDefinitions": "withoutExtensions",
+    "markdown-image.base.uploadMethod": "SM.MS",
 }

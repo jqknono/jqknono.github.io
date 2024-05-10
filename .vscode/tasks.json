@@ -4,7 +4,6 @@
             "label": "Build with Jekyll",
             "type": "shell",
             "command": "${workspaceFolder}/script/build.ps1 '${workspaceFolder}'",
-            "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -16,17 +15,16 @@
             "windows": {
                 "command": "hugo server --bind :: --baseURL http://r7000.jqknono.com --port 34006 --logLevel info --buildDrafts --buildFuture --disableFastRender --noHTTPCache"
             },
-            "problemMatcher": []
         },
         {
             "label": "hugo serve public",
             "type": "shell",
             "windows": {
-                "command": "hugo server --bind :: --port 34009 --baseURL https://blog.techfetch.dev --disableBrowserError --disableLiveReload  --watch false"
+                "command": "hugo server --bind :: --baseURL https://blog.techfetch.dev --port 34009 --disableBrowserError --disableLiveReload  --watch false"
             },
-            "runOptions": {
-                "runOn": "folderOpen"
-            },
+            // "runOptions": {
+            //     "runOn": "folderOpen"
+            // },
         },
         {
             "label": "hugo build",

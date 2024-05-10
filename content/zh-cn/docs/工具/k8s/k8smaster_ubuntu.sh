@@ -144,7 +144,7 @@ function config_env() {
 }
 
 function main() {
-    if [ $use_aliyun == true] ; then
+    if [ $use_aliyun == true ] ; then
         set_third_repo
     fi
     apt update -y

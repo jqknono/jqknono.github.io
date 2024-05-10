@@ -2,7 +2,6 @@
 title: elf文件结构
 ---
 
-# elf 文件结构
 
 ![picture 5](https://s2.loli.net/2023/05/06/iSWevXQmDMK9rGp.png)  
 
