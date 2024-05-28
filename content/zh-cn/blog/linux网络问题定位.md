@@ -1,8 +1,14 @@
 ---
+layout: blog
 title: linux网络问题定位
+published: true
+categories: 网络
+tags: [网络, blog]
+date: 2024-05-28 16:39:14 +0800
+draft: false
+toc: false
+comments: false
 ---
-
-# linux 网络问题定位
 
 ## 排障工具
 
