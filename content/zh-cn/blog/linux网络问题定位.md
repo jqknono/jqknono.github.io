@@ -7,7 +7,8 @@ tags: [网络, blog]
 date: 2024-05-28 16:39:14 +0800
 draft: false
 toc: false
-comments: false
+comments: true
+giscus_comments: true
 ---
 
 ## 排障工具

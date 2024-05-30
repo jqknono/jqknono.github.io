@@ -16,4 +16,7 @@
     "foam.logging.level": "info",
     "foam.edit.linkReferenceDefinitions": "withoutExtensions",
     "markdown-image.base.uploadMethod": "SM.MS",
+    "files.associations": {
+        "*.html": "liquid"
+    },
 }
