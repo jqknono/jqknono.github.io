@@ -10,9 +10,13 @@ description: 探索技术，分享生活
 <a class="btn btn-lg btn-primary me-3" href="blog/">Blog</a>
 <a class="btn btn-lg btn-secondary" href="docs/">Docs</a>
 {.p-initial .my-5}
-我是谁不重要, 我的历史浅薄无聊, 重要是我们将去往何处, 我们将如何前行.
+
+<!-- 我是谁不重要, 我的历史浅薄无聊, 重要是我们将去往何处, 我们将如何前行. -->
+
+建造舒适的家用孤岛网络服务.
 
 <!-- {{% blocks/link-down color="info" %}} -->
+
 {{% /blocks/cover %}}
 
 <!-- {{% blocks/lead color="primary" %}}

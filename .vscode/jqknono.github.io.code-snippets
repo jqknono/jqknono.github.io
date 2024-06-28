@@ -34,13 +34,13 @@
         "body": [
             "---",
             "layout: ${1|blog,docs,page,post|}",
-            "title: ${2:$TM_FILENAME_BASE}",
-            "description: $3",
-            "published: ${4|false,true|}",
-            "categories: ${5|未分类,网络,评测,调研,集群,系统,运维,博弈,数据,索引,安全,工具,通识,设计,Win疑难杂症,Mac疑难杂症,Linux疑难杂症|}",
-            "tags: [$5, ${RELATIVE_FILEPATH/.*?([^\\\\]+)\\\\[^\\\\]+\\.md/$1/g}]",
-            "date: ${6:$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND} +0800",
-            "draft: ${7|true,false|}",
+            "categories: ${2|未分类,索引,网络,评测,调研,教程,系统,运维,博弈,数据,安全,工具,通识,设计,羊毛,Win疑难杂症,Mac疑难杂症,Linux疑难杂症|}",
+            "tags: [$2, ${RELATIVE_FILEPATH/.*?([^\\\\]+)\\\\[^\\\\]+\\.md/$1/g}]",
+            "published: ${3|false,true|}",
+            "draft: ${4|true,false|}",
+            "title: ${5:$TM_FILENAME_BASE}",
+            "linkTitle: ${6:$TM_FILENAME_BASE}",
+            "date: ${7:$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND} +0800",
             "toc: ${8|true,false|}",
             "toc_hide: ${9|false,true|}",
             "math: ${10|false,true|}",
@@ -48,9 +48,11 @@
             "giscus_comments: ${12|true,false|}",
             "hide_summary: ${13|false,true|}",
             "hide_feedback: ${14|false,true|}",
+            "description: $15",
+            "weight: ${16:100}",
             "---",
             "",
-            "- [ ] $2"
+            "- [ ] $5"
         ],
         "description": "Add front matter for post"
     }

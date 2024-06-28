@@ -13,14 +13,14 @@
             "label": "hugo serve",
             "type": "shell",
             "windows": {
-                "command": "hugo server --bind :: --baseURL http://r7000.jqknono.com --port 34006 --logLevel info --buildDrafts --buildFuture --disableFastRender --noHTTPCache"
+                "command": "hugo server --bind :: --baseURL https://blogs.jqknono.com --port 34009 --logLevel info --buildDrafts --buildFuture --noHTTPCache"
             },
         },
         {
             "label": "hugo serve public",
             "type": "shell",
             "windows": {
-                "command": "hugo server --bind :: --baseURL https://blog.techfetch.dev --port 34009 --disableBrowserError --disableLiveReload  --watch false"
+                "command": "hugo server --bind :: --baseURL https://blogs.jqknono.com --port 34009 --disableBrowserError --disableLiveReload  --watch false"
             },
             // "runOptions": {
             //     "runOn": "folderOpen"
